@@ -352,7 +352,7 @@ a:focus {
   text-align: center;
   font-weight: 700;
   color: #000;
-  margin: 50px 0;
+  margin: 50px 10px 0 0;
 }
 
 .tab {
@@ -384,6 +384,7 @@ a:focus {
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
+  border-radius: 12px;
 }
 
 /* Style the tab content */
