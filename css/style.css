@@ -416,6 +416,7 @@ a:focus {
   color: black !important;
 }
 
+
 /* Mobile Code */
 @media screen and (max-width: 600px) {
   .images .col-sm-3 {
@@ -436,5 +437,11 @@ a:focus {
   }
   #header{
     font-size: 24px !important;
+  }
+  table{
+    border-collapse: collapse !important;
+  }
+  .col{
+    padding: 10px 0 !important;
   }
 }
