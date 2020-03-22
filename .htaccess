@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www.gocoronago.netlify.com$
+RewriteRule ^(.*)$ http://www.gocoronago.netlify.com/$1 [R=301,L]
