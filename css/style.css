@@ -9,30 +9,23 @@
 }
 
 body {
-  background-color: #DAE0E2;
+  background-color: #1BCA9B;
   margin-top: 2rem;
   font-family: GrotekMed;
 }
 
 .graph {
-  background-color: #EAF0F1 !important;
+  background-color: #53E0BC !important;
 }
 
 #grad {
-  background-color: #EAF0F1;
+  background-color: #53E0BC;
   border-radius: 1rem;
   margin-top: 1rem;
   color: black;
-  font-family: GrotekMed;
+  font-family: 'Lato', sans-serif;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
 }
-
-/* #grad:hover {
-  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-} */
 
 @keyframes shake {
 
@@ -57,6 +50,7 @@ body {
     transform: translate3d(4px, 0, 0);
   }
 }
+
 path.subunit:hover {
   fill-opacity: 0.8;
 }
@@ -74,7 +68,7 @@ div.tooltip {
 }
 
 .tipps {
-  background-color: #EAF0F1;
+  background-color: #53E0BC;
   border-radius: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -84,12 +78,12 @@ div.tooltip {
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
 }
 
-/* .tipps:hover {
-  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-} */
+.tipps h2{
+  font-size: 24px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-weight: 700;
+}
 
 th {
   font-family: GrotekBold;
@@ -153,7 +147,7 @@ th {
 
 
 .footer {
-  background: #e3eef1;
+  background: #53E0BC;
   padding-top: 1rem;
 }
 
@@ -328,7 +322,8 @@ a:focus {
   font-weight: 300;
   line-height: 1.8em;
 }
-.accordion .content p span{
+
+.accordion .content p span {
   color: black;
   font-weight: 700;
   font-size: 22px;
@@ -351,6 +346,73 @@ a:focus {
   margin: 50px 0;
 }
 
+.tab {
+  width: 100%;
+  text-align: center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  /* width: 100%; */
+  display: inline-block;
+  /* margin-left: 30%;
+  margin-right: 30% */
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+  background-color: #ddd;
+} */
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  /* border: 1px solid #ccc;
+  border-top: none; */
+}
+
+/* Style the close button
+.topright {
+  float: right;
+  cursor: pointer;
+  font-size: 28px;
+} */
+
+/* #grad td,
+#grad th {
+  border: 1px solid #ddd;
+  padding: 8px;
+} */
+
+.stats tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.stats tr:hover {
+  background-color: #ddd;
+}
+
+.stats th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: black !important;
+}
+
 /* Mobile Code */
 @media screen and (max-width: 600px) {
   .images .col-sm-3 {
@@ -358,5 +420,15 @@ a:focus {
     padding: 5px;
     display: block;
     min-width: 100%;
+  }
+  .tips1{
+    padding: 10px 0 !important;
+  }
+  #map{
+    min-width: min-content;
+    display: block;
+  }
+  .accordion a{
+    font-size: 18px;
   }
 }
