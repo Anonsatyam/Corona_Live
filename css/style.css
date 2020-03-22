@@ -461,11 +461,15 @@ table.table td{
   table.table td{
     padding-top: 0;
     padding-bottom: 0;
+    text-align: start !important;
   }
   .table td{
     padding: .50rem !important;
   }
   svg{
     width: 300px;
+  }
+  table.table thead th {
+    text-align: start !important;
   }
 }
