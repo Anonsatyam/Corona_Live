@@ -418,6 +418,9 @@ a:focus {
   text-align: left;
   color: black !important;
 }
+table.table td{
+  font-weight: 400 !important;
+}
 
 
 /* Mobile Code */
