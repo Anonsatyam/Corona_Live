@@ -443,7 +443,7 @@ table.table td{
   }
   #map{
     min-width: min-content;
-    display: block;
+    display: contents;
   }
   .accordion a{
     font-size: 18px;
@@ -461,5 +461,9 @@ table.table td{
   table.table td{
     padding-top: 0;
     padding-bottom: 0;
+  }
+  svg{
+    width: 300px;
+    float: left !important;
   }
 }
