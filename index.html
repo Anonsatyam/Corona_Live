@@ -73,34 +73,40 @@
 
     </table>
     <!-- <div class=" tipps container"> -->
-      <h2 style="text-align: center !important;">Reports</h2>
-      <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Map_View')" id="defaultOpen">Map View</button>
-        <button class="tablinks" onclick="openCity(event, 'Graph_View')">Graph View</button>
+    <h2 style="text-align: center !important; font-size: 22px; font-weight: 700; font-family: 'Poppins', sans-serif; margin-top: 50px; margin-bottom: 10px;">
+      Reports</h2>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Map_View')" id="defaultOpen">Map View</button>
+      <button class="tablinks" onclick="openCity(event, 'Graph_View')">Graph View</button>
 
-        <div id="Map_View" class="tabcontent">
-          <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
-          <div class="container"
-            style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
-            <h2 class="text-p">Indian state wise Interactive Map</h2>
-            <center>
-              <div class="container" id="map"></div>
-            </center>
-          </div>
+      <div id="Map_View" class="tabcontent">
+        <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
+        <div class="container map"
+          style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:10px;">
+          <!-- <div class="row">
+            <div class="col"> -->
+              <h2 class="text-p">Indian state wise Interactive Map</h2>
+              <center>
+                <div class="container" id="map"></div>
+              </center>
+            <!-- </div>
+          </div> -->
+
         </div>
-        <div id="Graph_View" class="tabcontent">
-          <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
-          <div class="container graph"
-            style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
-            <div class="row">
-              <div class="col">
-                <h2 class="text-p">Indian state wise Graphical Analytics</2>
-                  <canvas id="canvas" style="margin-top: 32px;"></canvas>
-              </div>
+      </div>
+      <div id="Graph_View" class="tabcontent">
+        <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
+        <div class="container graph"
+          style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+          <div class="row">
+            <div class="col">
+              <h2 class="text-p">Indian state wise Graphical Analytics</2>
+                <canvas id="canvas" style="margin-top: 32px;"></canvas>
             </div>
           </div>
         </div>
       </div>
+    </div>
     <!-- </div> -->
 
     <table id="grad" class="table table-borderless">

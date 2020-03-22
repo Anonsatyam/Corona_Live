@@ -26,6 +26,9 @@ body {
   font-family: 'Lato', sans-serif;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
 }
+.map{
+  background-color: #53E0BC;
+}
 
 @keyframes shake {
 
@@ -428,6 +431,9 @@ a:focus {
   .tips1{
     padding: 10px 0 !important;
   }
+  .text-p{
+    font-size: 18px !important;
+  }
   #map{
     min-width: min-content;
     display: block;
@@ -440,8 +446,13 @@ a:focus {
   }
   table{
     border-collapse: collapse !important;
+
   }
   .col{
     padding: 10px 0 !important;
+  }
+  table.table td{
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
