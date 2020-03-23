@@ -432,6 +432,9 @@ table.table td{
 button{
   color: white;
 }
+.contact table.table th, table.table td {
+  text-align: center;
+}
 
 
 /* Mobile Code */
@@ -499,7 +502,7 @@ button{
     font-size: 22px;
     font-family: 'Montserrat', sans-serif !important;
   }
-  #helpline td{
+   td{
     
   }
 }
