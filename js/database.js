@@ -126,15 +126,23 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
   fetch('helpline.json')
-  .then(response => {
-    return response.json()
-  })
-  .then(data => {
-    // Work with JSON data here
-    console.log(data)
-  })
-  .catch(err => {
-    // Do something for an error here
+  .then(res => {
+    res.json().then(
+      data=>{
+        console.log(data);
+        if(data.length > 0){
+          var temp = "";
+
+          data.forEach((u)=>{
+            temp += "<tr>";
+            temp += "<td>"+u.loc+"</td>";
+            temp += "<td>"+u.number+"</td>";
+            temp += "</tr>";
+            })
+            document.getElementById("helpline").innerHTML = temp;
+        }
+      }
+    )
   })
 });
 
