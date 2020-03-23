@@ -125,7 +125,7 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
-  fetch('./helpline.json')
+  fetch('helpline.json')
   .then(response => {
     return response.json()
   })
