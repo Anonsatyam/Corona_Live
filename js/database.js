@@ -1,9 +1,9 @@
-$(document).ready(function() {
-  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function(
+$(document).ready(function () {
+  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function (
     data
   ) {
     Obj = data.data.summary;
-    mainObj = data.data.regional.sort(function(a, b) {
+    mainObj = data.data.regional.sort(function (a, b) {
       return (
         b.confirmedCasesIndian +
         b.confirmedCasesForeign -
@@ -44,12 +44,12 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function(
+$(document).ready(function () {
+  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function (
     data
   ) {
     Obj = data.data.summary;
-    mainObj = data.data.regional.sort(function(a, b) {
+    mainObj = data.data.regional.sort(function (a, b) {
       return (
         b.confirmedCasesIndian +
         b.confirmedCasesForeign -
@@ -72,8 +72,7 @@ $(document).ready(function() {
       type: "line",
       data: {
         labels: loca,
-        datasets: [
-          {
+        datasets: [{
             label: "Infected",
             data: cases,
             backgroundColor: "white",
@@ -103,30 +102,39 @@ $(document).ready(function() {
           intersect: true
         },
         scales: {
-          xAxes: [
-            {
+          xAxes: [{
+            display: true,
+            ticks: {
+              display: false
+            },
+            scaleLabel: {
               display: true,
-              ticks: {
-                display: false
-              },
-              scaleLabel: {
-                display: true,
-                labelString: "States"
-              }
+              labelString: "States"
             }
-          ],
-          yAxes: [
-            {
+          }],
+          yAxes: [{
+            display: true,
+            scaleLabel: {
               display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "No. of people"
-              }
+              labelString: "No. of people"
             }
-          ]
+          }]
         }
       }
     });
+  });
+});
+$(document).ready(function () {
+  $.get('helpline.json', function (data) {
+    
+      // var helpline_no = "";
+      // $.each(data, function(key, value){
+      //   helpline_no += '<tr>';
+      //   helpline_no += '<td>'+value.loc+'</td>';
+      //   helpline_no += '<td>'+value.number+'</td>';
+      //   helpline_no += '</tr>';
+      // });
+      // $('#helpline').append(helpline_no);
   });
 });
 
