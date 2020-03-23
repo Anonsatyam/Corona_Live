@@ -502,7 +502,7 @@ button{
     font-size: 22px;
     font-family: 'Montserrat', sans-serif !important;
   }
-   td{
-    
+  .contact table.table th, table.table td {
+    text-align: center;
   }
 }
