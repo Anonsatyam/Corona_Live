@@ -125,17 +125,17 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
-  $.get('helpline.json', function (data) {
-    
-      // var helpline_no = "";
-      // $.each(data, function(key, value){
-      //   helpline_no += '<tr>';
-      //   helpline_no += '<td>'+value.loc+'</td>';
-      //   helpline_no += '<td>'+value.number+'</td>';
-      //   helpline_no += '</tr>';
-      // });
-      // $('#helpline').append(helpline_no);
-  });
+  fetch('./helpline.json')
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    // Work with JSON data here
+    console.log(data)
+  })
+  .catch(err => {
+    // Do something for an error here
+  })
 });
 
 // $(document).ready(function() {
