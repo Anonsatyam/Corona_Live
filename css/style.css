@@ -13,7 +13,8 @@ body {
   margin-top: 2rem;
   font-family: GrotekMed;
 }
-h2{
+
+h2 {
   color: white;
 }
 
@@ -29,7 +30,13 @@ h2{
   font-family: 'Nunito Sans', sans-serif;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
 }
-.map{
+
+#grad th {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.map {
   background: linear-gradient(to right, #8e2de2, #4a00e0);
 }
 
@@ -87,7 +94,7 @@ div.tooltip {
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
 }
 
-.tipps h2{
+.tipps h2 {
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
@@ -154,7 +161,8 @@ th {
   margin-bottom: 2rem;
 
 }
-.tipps_p{
+
+.tipps_p {
   font-weight: 400 !important;
 }
 
@@ -387,7 +395,8 @@ a:focus {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  ;
   border-radius: 12px;
 }
 
@@ -426,15 +435,15 @@ a:focus {
   text-align: left;
   color: white !important;
 }
-table.table td{
+
+table.table td {
   font-weight: 400 !important;
 }
-button{
+
+button {
   color: white;
 }
-.contact table.table th, table.table td {
-  text-align: center;
-}
+
 
 
 /* Mobile Code */
@@ -445,64 +454,86 @@ button{
     display: block;
     min-width: 100%;
   }
-  .tips1{
+
+  .tips1 {
     padding: 10px 0 !important;
   }
-  .few_tips p{
+
+  .few_tips p {
     font-size: 17.6px !important;
   }
-  #map{
+
+  #map {
     min-width: min-content;
     display: contents;
   }
-  .accordion a{
+
+  .accordion a {
     font-size: 19px !important;
     font-family: 'Montserrat', sans-serif !important;
   }
-  .accordion .content p{
+
+  .accordion .content p {
     font-size: 17.6px;
     font-family: 'Nunito Sans', sans-serif !important;
   }
-  #header{
+
+  #header {
     font-size: 22px !important;
   }
-  table{
+
+  table {
     border-collapse: collapse !important;
 
   }
-  .col{
+
+  .col {
     padding: 10px 0 !important;
   }
-  table.table td{
+
+  table.table td {
     padding-top: 0;
     padding-bottom: 0;
-    text-align: start !important;
+    text-align: start;
     font-size: x-small !important;
   }
-  .table td{
+
+  .table td {
     padding: .50rem !important;
   }
-  svg{
+
+  svg {
     width: 300px;
   }
+
   table.table thead th {
     text-align: start !important;
   }
-  .tipps ul li{
+
+  .tipps ul li {
     font-size: 17.6px;
     font-family: 'Nunito Sans', sans-serif !important;
   }
-  table.table thead th{
-    font-size: 13px !important;
+
+  table.table thead th {
+    font-size: 14px !important;
   }
+
   .tipps h2 {
     font-size: 22px;
   }
-  .contact tr h2{
+
+  .contact tr h2 {
     font-size: 22px;
     font-family: 'Montserrat', sans-serif !important;
   }
-  .contact table.table th, table.table td {
+
+  #helpline td {
     text-align: center !important;
+  }
+
+  #grad th {
+    font-size: 14px;
+    font-weight: 400;
   }
 }
