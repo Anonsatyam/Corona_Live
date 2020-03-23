@@ -89,7 +89,7 @@ div.tooltip {
 
 .tipps h2{
   font-size: 24px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-weight: 700;
 }
@@ -99,7 +99,7 @@ th {
 }
 
 .tipps_heading {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-weight: 700;
 }
@@ -251,7 +251,7 @@ a:focus {
 
 .images h2 {
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-family: 18px;
   font-weight: 700;
 }
@@ -352,7 +352,7 @@ a:focus {
 }
 
 .faq h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-weight: 700;
   color: white;
@@ -454,11 +454,11 @@ button{
   }
   .accordion a{
     font-size: 19px !important;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
   }
   .accordion .content p{
     font-size: 17.6px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif !important;
   }
   #header{
     font-size: 22px !important;
@@ -487,12 +487,16 @@ button{
   }
   .tipps ul li{
     font-size: 17.6px;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif !important;
   }
   table.table thead th{
     font-size: 13px !important;
   }
   .tipps h2 {
     font-size: 22px;
+  }
+  .contact tr h2{
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif !important;
   }
 }
