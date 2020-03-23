@@ -453,7 +453,12 @@ button{
     display: contents;
   }
   .accordion a{
+    font-size: 20px !important;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .accordion .content p{
     font-size: 17.6px;
+    font-family: 'Nunito Sans', sans-serif;
   }
   #header{
     font-size: 22px !important;
