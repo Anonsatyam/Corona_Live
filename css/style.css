@@ -445,7 +445,7 @@ button{
   .tips1{
     padding: 10px 0 !important;
   }
-  .text_p{
+  p .text_p{
     font-size: 16px !important;
   }
   #map{
