@@ -12,6 +12,12 @@ const assets = [
     'images/fever.png',
 ];
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./sw.js');
+    });
+  }
+
 // const staticCacheName = 'static-site-v2';
 // const dynamicCache = 'dynamic-site-v1';
 
