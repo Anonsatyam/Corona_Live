@@ -14,7 +14,7 @@
     "generated" : "true",
     "icons" : [
         {
-            "src": "./favicon.png",
+            "src": "./images/favicon.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any"
