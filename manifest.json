@@ -3,7 +3,7 @@
     "name" : "COVID-19 Live",
     "scope" : "/",
     "display" : "standalone",
-    "start_url" : "https://worldagainstcovid19.org/",
+    "start_url" : "https://gocoronago.netlify.com/",
     "short_name" : "Corona Live",
     "theme_color" : "#8E2DE2",
     "description" : "",
