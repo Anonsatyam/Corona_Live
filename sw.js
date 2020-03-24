@@ -12,8 +12,8 @@ const assets = [
     'images/fever.png',
 ];
 
-const staticCacheName = 'static-site-v2';
-const dynamicCache = 'dynamic-site-v1';
+// const staticCacheName = 'static-site-v2';
+// const dynamicCache = 'dynamic-site-v1';
 
 
 self.addEventListener('install', evt => {
