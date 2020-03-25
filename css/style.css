@@ -475,6 +475,11 @@ button {
   max-width: 100%;
   display: inline-block;
 }
+.SandboxRoot.env-bp-550 .timeline-Tweet-text {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 300;
+}
 
 
 
