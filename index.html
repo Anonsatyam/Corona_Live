@@ -387,7 +387,32 @@
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript" src="./js/my_script.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-    <script type="text/javascript" src="./js/share.js"></script>
+    <script type="text/javascript">
+
+      const shareBtn = document.getElementById("shareBtn")
+
+      // check if web share API available if not display:none the share btn
+      if (!navigator.share) {
+
+
+        shareBtn.classList.add('invisible')
+
+      } else {
+        shareBtn.addEventListener('click', () => {
+          navigator.share({
+            title: 'COVID-19 Live Updates',
+            text: 'Get COVID-19 live updates of Indian states ',
+            url: 'https://gocorona.wtf'
+          }).then(() => {
+
+          }).catch(() => {
+
+          })
+        })
+      }
+
+    </script>
+    <!-- <script type="text/javascript" src="./js/share.js"></script> -->
     <!-- <script src="./sw.js"></script> -->
 </body>
 
