@@ -546,7 +546,7 @@ button {
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    background: #E3EEF1;
+    background: red;
     box-shadow:  8px 8px 16px #c8d1d4, 
                -8px -8px 16px #feffff;
     position: fixed;
@@ -562,7 +562,7 @@ button {
   }
   
   .invisible{
-    display: none;
+    display: initial;
   }
 
 }
