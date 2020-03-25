@@ -471,6 +471,10 @@ button {
 .invisible {
   display: none;
 }
+.twitter a{
+  max-width: 100%;
+  display: inline-block;
+}
 
 
 
