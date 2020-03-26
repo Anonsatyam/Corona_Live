@@ -452,9 +452,8 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: red;
-  box-shadow: 8px 8px 16px #c8d1d4,
-    -8px -8px 16px #feffff;
+  background: #e3eef1;
+  box-shadow: 8px 8px 16px #c8d1d4, -8px -8px 16px #feffff;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -470,15 +469,6 @@ button {
 
 .invisible {
   display: none;
-}
-.twitter a{
-  max-width: 100%;
-  display: inline-block;
-}
-.SandboxRoot.env-bp-550 .timeline-Tweet-text {
-  font-size: 16px !important;
-  line-height: 27px;
-  font-weight: 300;
 }
 
 
