@@ -18,7 +18,7 @@
   <link rel="icon" href="./images/favicon.png" type="image/gif" sizes="16x16">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- MDB icon -->
   <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="css/mdb.min.css" />
-  <link rel="preconnect" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  <link rel="preconnect" href="./fontawesome-free-5.13.0-web/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Your custom styles (optional) -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -43,7 +43,8 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script rel="preconnect" async src="https://www.googletagmanager.com/gtag/js?id=UA-161443168-1"></script>
-  <script data-ad-client="ca-pub-4952604751827325" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script data-ad-client="ca-pub-4952604751827325" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -393,16 +394,14 @@
 
       // check if web share API available if not display:none the share btn
       if (!navigator.share) {
-
-
         shareBtn.classList.add('invisible')
 
       } else {
-        shareBtn.addEventListener('click', event => {
+        shareBtn.addEventListener('click', () => {
           navigator.share({
             title: 'COVID-19 Live Updates',
             text: 'Get COVID-19 live updates of Indian states ',
-            url: 'https://gocoronago.netlify.com'
+            url: 'https://gocorona.wtf'
           }).then(() => {
 
           }).catch(() => {
