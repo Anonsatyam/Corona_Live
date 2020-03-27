@@ -164,7 +164,7 @@ $(document).ready(function() {
       card.style.marginBottom = "2rem";
       // card.style.border="2px solid black";
       card.style.boxShadow = "none";
-      var card_title = document.createElement("h5");
+      var card_title = document.createElement("h6");
       card_title.innerHTML = data.news[i].title;
       card_title.setAttribute("classs", "card-title");
       card_title.style.color = "#000000"
