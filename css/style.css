@@ -396,14 +396,12 @@ a:focus {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
-  ;
+  background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
   border-radius: 12px;
 }
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
   padding: 6px 12px;
   /* border: 1px solid #ccc;
   border-top: none; */
@@ -446,6 +444,10 @@ button {
 }
 .icon{
   display: none;
+}
+
+#news {
+  text-align: center;
 }
 
 /* Mobile Code */

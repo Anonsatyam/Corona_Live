@@ -146,51 +146,104 @@ $(document).ready(function () {
   });
 });
 
-// $(document).ready(function() {
-//   $.getJSON(
-//     "https://newsapi.org/v2/everything?q=coronavirus%20AND%20%22corona%20virus%22%20AND%20%22COVID-19%22&apiKey=6f105da0c6c94d63a15d10df7f17efdf",
-//     null,
-//     function(data) {
-//       var news = document.getElementById("news");
-//       var newcol = document.createElement("ul");
-//       newcol.setAttribute("class", "list-inline");
-//       news.appendChild(newcol);
-//       for (var i = 0; i < 8; i++) {
-//         var li = document.createElement("li");
-//         li.setAttribute("class", "list-inline-item");
-//         var card = document.createElement("div");
-//         card.setAttribute("class", "card");
-//         card.style.width = "15rem";
-//         card.style.marginRight = "1rem";
-//         card.style.marginBottom = "2rem";
-//         // card.style.border="2px solid black";
-//         card.style.boxShadow = "none";
-//         var card_title = document.createElement("h5");
-//         card_title.innerHTML = data.articles[i].title.substr(0, 40) + "...";
-//         card_title.setAttribute("classs", "card-title");
-//         var card_desc = document.createElement("p");
-//         card_desc.innerHTML =
-//           data.articles[i].description.substr(0, 150) + "....";
-//         card_desc.setAttribute("class", "card-text");
-//         var news_img = document.createElement("img");
-//         news_img.setAttribute("src", data.articles[i].urlToImage);
-//         news_img.setAttribute("class", "card-img-top");
-//         var btntoart = document.createElement("a");
-//         btntoart.setAttribute("class", "btn btn-main");
-//         btntoart.style.color = "#fff";
-//         btntoart.style.background = "#000";
-//         btntoart.setAttribute("href", data.articles[i].url);
-//         btntoart.innerHTML = "Read More";
-//         var card_body = document.createElement("div");
-//         card_body.setAttribute("class", "card-body");
-//         card_body.appendChild(card_title);
-//         card_body.appendChild(card_desc);
-//         card_body.appendChild(btntoart);
-//         card.appendChild(news_img);
-//         card.appendChild(card_body);
-//         li.appendChild(card);
-//         newcol.appendChild(li);
-//       }
-//     }
-//   );
+$(document).ready(function() {
+  $.getJSON("https://cryptic-ravine-96718.herokuapp.com/", null, function(
+    data
+  ) {
+    var news = document.getElementById("news");
+    var newcol = document.createElement("ul");
+    newcol.setAttribute("class", "list-inline");
+    news.appendChild(newcol);
+    for (var i = 0; i < 8; i++) {
+      var li = document.createElement("li");
+      li.setAttribute("class", "list-inline-item");
+      var card = document.createElement("div");
+      card.setAttribute("class", "card");
+      card.style.width = "15rem";
+      card.style.marginRight = "1rem";
+      card.style.marginBottom = "2rem";
+      // card.style.border="2px solid black";
+      card.style.boxShadow = "none";
+      var card_title = document.createElement("h5");
+      card_title.innerHTML = data.news[i].title;
+      card_title.setAttribute("classs", "card-title");
+      var news_img = document.createElement("img");
+      news_img.setAttribute("src", data.news[i].img);
+      news_img.setAttribute("class", "card-img-top");
+      var btntoart = document.createElement("a");
+      btntoart.setAttribute("class", "btn btn-main");
+      btntoart.style.color = "#fff";
+      btntoart.style.background = "#000";
+      btntoart.setAttribute("href", data.news[i].link);
+      btntoart.innerHTML = "Read More";
+      var card_body = document.createElement("div");
+      card_body.setAttribute("class", "card-body");
+      card_body.appendChild(card_title);
+      card_body.appendChild(btntoart);
+      card.appendChild(news_img);
+      card.appendChild(card_body);
+      li.appendChild(card);
+      newcol.appendChild(li);
+    }
+  });
+});
+
+let resp = null;
+let resp2 = null;
+
+// $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
+//   resp = d;
 // });
+$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(data) {
+  resp = data;
+  // resp2 = data.USA;
+  var j = "<tbody>";
+  j += "<tr>";
+  j += "<td>" + resp.total + "</td>";
+  j += "<td>" + resp.active + "</td>";
+  j += "<td>" + resp.deaths + "</td>";
+  j += "<td>" + resp.cured + "</td>";
+  j += "</tr>";
+  j += "</tbody>";
+  // j += "<p>" + resp2.total + "</p>";
+  document.getElementById("faster-data").innerHTML = j;
+});
+
+$(document).ready(function() {
+  $("#btn-graph").on("click", function() {
+    var graph = document.getElementById("graph-data");
+    var map = document.getElementById("map-data");
+    graph.style.display = "block";
+    map.style.display = "none";
+  });
+
+  $("#btn-map").on("click", function() {
+    var graph = document.getElementById("graph-data");
+    var map = document.getElementById("map-data");
+    graph.style.display = "none";
+    map.style.display = "block";
+  });
+});
+
+$(document).ready(function() {
+  $("#btn-offical").on("click", function() {
+    var offical = document.getElementById("offical-data");
+    var fast = document.getElementById("fast-data");
+    offical.style.display = "block";
+    fast.style.display = "none";
+  });
+
+  $("#btn-fast").on("click", function() {
+    var offical = document.getElementById("offical-data");
+    var fast = document.getElementById("fast-data");
+    offical.style.display = "none";
+    fast.style.display = "block";
+  });
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(reg => console.log("service worker registered"))
+    .catch(err => console.log("service worker not registered", err));
+}
