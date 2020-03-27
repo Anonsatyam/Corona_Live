@@ -1,6 +1,6 @@
 const items = document.querySelectorAll(".accordion a");
 
-function toggleAccordion(){
+function toggleAccordion() {
   this.classList.toggle('active');
   this.nextElementSibling.classList.toggle('active');
 }
@@ -23,3 +23,15 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+
+$("#search-icon").click(function () {
+  $(".nav").toggleClass("search");
+  $(".nav").toggleClass("no-search");
+  $(".search-input").toggleClass("search-active");
+});
+
+$('.menu-toggle').click(function () {
+  $(".nav").toggleClass("mobile-nav");
+  $(this).toggleClass("is-active");
+});
