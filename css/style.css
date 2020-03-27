@@ -462,6 +462,10 @@ button {
     display: block;
     min-width: 100%;
   }
+  .news_card h2{
+    font-size: 22px !important;
+    font-family: 'Montserrat', sans-serif !important;
+  }
 
   .tips1 {
     padding: 10px 0 !important;
