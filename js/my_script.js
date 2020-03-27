@@ -20,18 +20,3 @@ function openCity(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-$("#search-icon").click(function () {
-  $(".nav").toggleClass("search");
-  $(".nav").toggleClass("no-search");
-  $(".search-input").toggleClass("search-active");
-});
-
-$('.menu-toggle').click(function () {
-  $(".nav").toggleClass("mobile-nav");
-  $(this).toggleClass("is-active");
-});
