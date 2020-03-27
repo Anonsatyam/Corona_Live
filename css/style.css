@@ -420,6 +420,10 @@ a:focus {
   padding: 8px;
 } */
 
+.card_body{
+  background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
+}
+
 .stats tr:nth-child(even) {
   background-color: #f2f2f2;
 }

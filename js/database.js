@@ -167,19 +167,21 @@ $(document).ready(function() {
       var card_title = document.createElement("h5");
       card_title.innerHTML = data.news[i].title;
       card_title.setAttribute("classs", "card-title");
+      card_title.style.color = "#000000"
       var news_img = document.createElement("img");
       news_img.setAttribute("src", data.news[i].img);
       news_img.setAttribute("class", "card-img-top");
       var btntoart = document.createElement("a");
       btntoart.setAttribute("class", "btn btn-main");
       btntoart.style.color = "#fff";
-      btntoart.style.background = "#000";
+      btntoart.style.background = "#8e2de2";
       btntoart.setAttribute("href", data.news[i].link);
       btntoart.innerHTML = "Read More";
       var card_body = document.createElement("div");
       card_body.setAttribute("class", "card-body");
       card_body.appendChild(card_title);
       card_body.appendChild(btntoart);
+      card_body.style.background = "linear-gradient(to right, #8e2de2, #4a00e0) !important";
       card.appendChild(news_img);
       card.appendChild(card_body);
       li.appendChild(card);
