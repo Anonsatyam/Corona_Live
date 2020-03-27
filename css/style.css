@@ -391,16 +391,8 @@ a:focus {
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
-  /* width: 100%; */
   display: inline-block;
-  /* margin-left: 30%;
-  margin-right: 30% */
 }
-
-/* Change background color of buttons on hover */
-/* .tab button:hover {
-  background-color: #ddd;
-} */
 
 /* Create an active/current tablink class */
 .tab button.active {
@@ -411,23 +403,8 @@ a:focus {
 /* Style the tab content */
 .tabcontent {
   padding: 6px 12px;
-  /* border: 1px solid #ccc;
-  border-top: none; */
-  display: block;
+  display: none;
 }
-
-/* Style the close button
-.topright {
-  float: right;
-  cursor: pointer;
-  font-size: 28px;
-} */
-
-/* #grad td,
-#grad th {
-  border: 1px solid #ddd;
-  padding: 8px;
-} */
 
 .card_body{
   background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
@@ -463,30 +440,30 @@ button {
   text-align: center;
 }
 
-/* Mobile Code */
+/* Mobile Code | Responsive Code*/
 @media screen and (max-width: 600px) {
-  .images .col-sm-3 {
-    flex: 33.33%;
-    padding: 5px;
-    display: block;
-    min-width: 100%;
-  }
-  .news_card h2{
+  #header {
     font-size: 22px !important;
-    font-family: 'Montserrat', sans-serif !important;
   }
 
-  .tips1 {
-    padding: 10px 0 !important;
+  #map {
+    min-width: min-content;
+    display: contents;
+  }
+
+  svg {
+    width: 300px;
   }
 
   .few_tips p {
     font-size: 16px !important;
   }
 
-  #map {
-    min-width: min-content;
-    display: contents;
+  .images .col-sm-3 {
+    flex: 33.33%;
+    padding: 5px;
+    display: block;
+    min-width: 100%;
   }
 
   .accordion a {
@@ -499,17 +476,10 @@ button {
     font-family: 'Nunito Sans', sans-serif !important;
   }
 
-  #header {
-    font-size: 22px !important;
-  }
 
   table {
     border-collapse: collapse !important;
 
-  }
-
-  .col {
-    padding: 10px 0 !important;
   }
 
   table.table td {
@@ -523,12 +493,17 @@ button {
     padding: .50rem !important;
   }
 
-  svg {
-    width: 300px;
+  table.table thead th {
+    text-align: start !important;
   }
 
   table.table thead th {
-    text-align: start !important;
+    font-size: 14px !important;
+  }
+
+
+  .col {
+    padding: 10px 0 !important;
   }
 
   .tipps ul li {
@@ -536,17 +511,8 @@ button {
     font-family: 'Nunito Sans', sans-serif !important;
   }
 
-  table.table thead th {
-    font-size: 14px !important;
-  }
-
   .tipps h2 {
     font-size: 22px;
-  }
-
-  .contact tr h2 {
-    font-size: 22px;
-    font-family: 'Montserrat', sans-serif !important;
   }
 
   #helpline td {
@@ -558,6 +524,7 @@ button {
     font-weight: 400;
   }
 
+  /* CSS Code For Web Share Button */
   .icon {
     width: 30px;
     height: 30px;
@@ -567,7 +534,6 @@ button {
     align-items: center;
     border-radius: 50px;
     background: #e3eef1;
-    /* box-shadow: 8px 8px 16px #c8d1d4, -8px -8px 16px #feffff; */
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -583,6 +549,11 @@ button {
 
   .invisible {
     display: none;
+  }
+
+  .news_card h2{
+    font-size: 22px !important;
+    font-family: 'Montserrat', sans-serif !important;
   }
 
 }

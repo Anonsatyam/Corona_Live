@@ -5,34 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+
   <!-- mobile meta (hooray!) -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="description"
     content="The most common symptoms of coronavirus disease (COVID-19) are fever, tiredness, and dry cough..">
+
+
+  <!-- For Progressive Web App -->
   <meta name="theme-color" content="#8E2DE2" />
   <meta name="apple-mobile-web-app-stats-bar" content="#8E2DE2">
-  
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="./images/favicon.png" />
   <link rel="icon" href="./images/favicon.png" type="image/gif" sizes="16x16">
+  <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+
+
+  <!-- Bootstrap & Icons CND Links Here -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- MDB icon -->
-  <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
-  <!-- <div> <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons"></div> -->
+
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans&display=swap" rel="stylesheet">
-  <!-- Google Fonts Roboto -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans&display=swap" rel="stylesheet">
+
+
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css">
+
+
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="css/mdb.min.css" />
   <link rel="preconnect" href="./fontawesome-free-5.13.0-web/css/all.css"
@@ -42,23 +53,6 @@
 
   <!-- Your custom styles (optional) -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script rel="preconnect" async src="https://www.googletagmanager.com/gtag/js?id=UA-161443168-1"></script>
-  <script data-ad-client="ca-pub-4952604751827325" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-161443168-1');
-  </script>
-  <script async src="//static.getclicky.com/js"></script> -->
 
   <title>Covid-19 Live Update | Coronavirus</title>
 </head>
@@ -83,46 +77,42 @@
       </tr>
       <tbody id="india-data2"></tbody>
       </thead>
-
     </table>
-    <!-- <div class=" tipps container"> -->
     <h2
-      style="text-align: center !important; font-size: 22px; font-weight: 700; font-family: 'Poppins', sans-serif; margin-top: 50px; margin-bottom: 10px;">
-      Reports</h2>
-    <div class="tab">
-      <button class="tablinks active" onclick="openCity(event, 'Map_View')" id="defaultOpen">Map View</button>
-      <button class="tablinks" onclick="openCity(event, 'Graph_View')">Graph View</button>
+    style="text-align: center !important; font-size: 22px; font-weight: 700; font-family: 'Poppins', sans-serif; margin-top: 50px; margin-bottom: 10px;">
+    Reports</h2>
+  <div class="tab">
+    <button class="tablinks active" onclick="openCity(event, 'Map_View')" id="defaultOpen">Map View</button>
+    <button class="tablinks" onclick="openCity(event, 'Graph_View')">Graph View</button>
 
-      <div id="Map_View" class="tabcontent" style="display: block;">
-        <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
-        <div class="container map"
-          style="padding:1rem; border-radius: 1rem; -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15); margin-top:2rem; margin-bottom:10px;">
-          <div class="row">
-            <div class="col">
-          <h2 style="font-size: 22px !important;" class="text-p">Indian state wise Interactive Map</h2>
-          <center>
-            <div class="container" id="map"></div>
-          </center>
-          </div>
-          </div>
+    <div id="Map_View" class="tabcontent" style="display: block;">
+      <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
+      <div class="container map"
+        style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:10px;">
+        <!-- <div class="row">
+          <div class="col"> -->
+        <h2 style="font-size: 22px !important;" class="text-p">Indian state wise Interactive Map</h2>
+        <center>
+          <div class="container" id="map"></div>
+        </center>
+        <!-- </div>
+        </div> -->
 
-        </div>
       </div>
-      <div id="Graph_View" class="tabcontent" style="display: none;">
-        <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
-        <div class="container graph"
-          style="padding:1rem; border-radius: 1rem; -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15); margin-top:2rem; margin-bottom:2rem;">
-          <div class="row">
-            <div class="col">
-              <h2 class="text-p">Indian state wise Graphical Analytics</2>
-                <canvas id="canvas" style="margin-top: 32px;"></canvas>
-            </div>
+    </div>
+    <div id="Graph_View" class="tabcontent" style="display: none;">
+      <!-- <span onclick="this.parentElement.style.display='none'" class="topright">&times</span> -->
+      <div class="container graph"
+        style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-p">Indian state wise Graphical Analytics</2>
+              <canvas id="canvas" style="margin-top: 32px;"></canvas>
           </div>
         </div>
       </div>
     </div>
-    <!-- </div> -->
-
+  </div>
 
     <table id="grad" class="table table-borderless second_data">
       <thead>
@@ -353,6 +343,7 @@
       </div>
     </div>
 
+    <!-- Div to display news which have been fetch by Third Party API -->
     <div class="news_card">
       <h2 class="text-center">Global Headlines on COVID-19 (Coronavirus)</2>
         <div class="news_container" style="margin-top:2rem;" id="news">
@@ -362,7 +353,6 @@
     <div class="container my-5" style="margin-bottom:3rem;"></div>
 
     <div class="footer" style="padding-bottom:1rem;">
-
       <div class="row icon-row">
         <a rel="noreferrer" href="https://www.instagram.com/amazeinternetservices/" class="btn-icon" target="_blank"> <i
             class="fab fa-instagram"></i> </a>
@@ -375,21 +365,22 @@
       </div>
       <div class="credits">
         <span>Made with ❤️ </span>
-        <!-- <span> by <a rel="noreferrer" href="https://focused-lamport-ae0eba.netlify.com/" target="_blank">Satyam Singh
-          </a></span> -->
         <span class="amaze"> by <a rel="noreferrer" href="https://amazeinternet.com/" target="_blank">Amaze Internet
           </a></span>
       </div>
-
       <a rel="noreferrer" href="https://www.mohfw.gov.in/" target="_blank" class="credits"> <span>Data: Ministry
           of</span><span> Health
           and Welfare</span></a>
     </div>
+
+
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <!-- Database From We Are Fetching and Showing Data On This Website -->
     <script type="text/javascript" src="js/database.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -401,27 +392,9 @@
     <script type="text/javascript" src="./js/my_script.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
 
+    <!-- Code For Web API Share Option -->
     <script type="text/javascript">
       const shareBtn = document.getElementById("shareBtn")
-
-      // // check if web share API available if not display:none the share btn
-      // if (!navigator.share) {
-      //   shareBtn.classList.add('invisible')
-
-      // } else {
-      //   shareBtn.addEventListener('click', () => {
-      //     navigator.share({
-      //       title: 'COVID-19 Live Updates',
-      //       text: 'Get COVID-19 live updates of Indian states ',
-      //       url: 'https://gocorona.wtf'
-      //     }).then(() => {
-
-      //     }).catch(() => {
-
-      //     })
-      //   })
-      // }
-
       shareBtn.addEventListener('click', event => {
         if (navigator.share) {
           navigator.share({
@@ -436,8 +409,9 @@
         }
       });
     </script>
-    <!-- <script type="text/javascript" src="./js/share.js"></script> -->
-    <!-- <script src="./sw.js"></script> -->
+
+    <!-- Script to track website Traffic -->
+    <script src="https://www.w3counter.com/tracker.js?id=131156"></script>
 </body>
 
 </html>
