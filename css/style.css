@@ -210,6 +210,13 @@ th {
   text-align: center;
   border-top-right-radius: 1rem;
 }
+.amaze{
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+.amaze a:hover{
+  color: white;
+}
 
 .credits {
   font-size: 14px;
