@@ -208,6 +208,7 @@ th {
 .footer {
   margin: 0 auto;
   text-align: center;
+  border-top-right-radius: 1rem;
 }
 
 .credits {
