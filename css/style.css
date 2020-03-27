@@ -477,12 +477,12 @@ button {
   }
 
   .accordion a {
-    font-size: 19px !important;
+    font-size: 16px !important;
     font-family: 'Montserrat', sans-serif !important;
   }
 
   .accordion .content p {
-    font-size: 17.6px;
+    font-size: 12.6px;
     font-family: 'Nunito Sans', sans-serif !important;
   }
 
