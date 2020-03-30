@@ -53,7 +53,7 @@
     <!-- Your custom styles (optional) -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-    <title>Helpful Links| Covid-19 Live Update</title>
+    <title>WORLD STATS | Covid-19 Live Update</title>
 </head>
 
 <body>
@@ -62,10 +62,11 @@
             style="font-size: 18px; text-align: center; color: black; font-family: GrotekMed; font-weight: 500;"><b>NOTE
                 :-</b> <span id="spin"></span></p>
     </div>
-
     <!-- <div class="container"> -->
     <div class="row">
+
         <div class="col-12">
+
             <nav class="navbar navbar-expand-md navbar-light">
                 <div class="container">
                     <a class="navbar-brand" href="https://indiavscovid19.com/" target="_blank"><img
@@ -115,59 +116,26 @@
     </div>
     </div>
 
-    <!-- </div> -->
+    <!-- <div class="tab">
 
-    <section class="link_tips">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="tipps">
-                        <h2 class="tipps_heading">Helpful Links</h2>
-                        <hr>
-                        <div class="row">
-                            <h5>HELPLINE NUMBERS [BY STATE]</h5>
-                            <button id="eight">
-                                <span id="eight_span"><a
-                                        href="https://www.mohfw.gov.in/coronvavirushelplinenumber.pdf">Click
-                                        Here</a></span></button>
-                        </div>
+    </div> -->
 
-                        <div class="row">
-                            <h5>MINISTRY OF HEALTH AND FAMILY WELFARE, GOV. OF INDIA</h5>
-                            <button id="eight">
-                                <span id="eight_span"><a href="https://www.mohfw.gov.in/">Click
-                                        Here</a></span></button>
-                        </div>
-
-                        <div class="row">
-
-                            <h5 style="align-items: baseline !important;">WHO : COVID-19 HOME PAGE</h5>
-                            <button id="eight">
-                                <span id="eight_span"><a
-                                        href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">Click
-                                        Here</a></span></button>
-                        </div>
-
-                        <div class="row">
-                            <h5>CDC</h5>
-                            <button class="pull-right" id="eight">
-                                <span class="pull-right" id="eight_span"><a
-                                        href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html">Click
-                                        Here</a></span></button>
-                        </div>
-
-                        <div class="row">
-                            <h5>COVID-19 GLOBAL TRACKER</h5>
-                            <button id="eight">
-                                <span id="eight_span"><a href="https://coronavirus.thebaselab.com/">Click
-                                        Here</a></span></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
+    <div class="container world">
+        <table id="grad" class="table table-borderless">
+            <tr>
+                <h2 style="text-align:center; margin:20px 0 !important; font-family: GrotekBold; font-size: 40px;">
+                    Covid-19 Coronavirus Outbreak In World
+                    <br>(Live Report)</h2>
+                <th style="text-align: center;">Country</th>
+                <th style="text-align: center;">Cases</th>
+                <th style="text-align: center;">Recovered</th>
+                <th style="text-align: center;">Deaths</th>
+                <th style="text-align: center;">Active</th>
+            </tr>
+            </thead>
+            <tbody id="world_data" style="text-align: center !important;"></tbody>
+        </table>
+    </div>
 
     <!-- Div to display news which have been fetch by Third Party API -->
     <div class="news_card container">
@@ -200,26 +168,48 @@
     </div>
 
 
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
 
     <!-- Database From We Are Fetching and Showing Data On This Website -->
-    <script type="text/javascript" src="js/database.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Your custom scripts (optional) -->
-    <script type="text/javascript" src="./js/my_script.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
+
+
 
     <!-- Code For Web API Share Option -->
-    <script type="text/javascript">
+
+
+    <!-- Script to track website Traffic -->
+
+
+    <!-- Service Worker Script -->
+    <!-- <script type="text/javascript" src="./sw.js"></script> -->
+
+
+
+</body>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+
+<script type="text/javascript" src="js/database.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript" src="./js/my_script.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script type="text/javascript" src="./js/share.js"></script>
+
+<script src="https://www.w3counter.com/tracker.js?id=131156"></script>
+
+
+<script type="text/javascript">
+    window.onload = function () {
         const shareBtn = document.getElementById("shareBtn")
         shareBtn.addEventListener('click', event => {
             if (navigator.share) {
@@ -234,16 +224,7 @@
                 shareDialog.classList.add('is-open');
             }
         });
-    </script>
-
-    <!-- Script to track website Traffic -->
-    <script src="https://www.w3counter.com/tracker.js?id=131156"></script>
-
-    <!-- Service Worker Script -->
-    <!-- <script type="text/javascript" src="./sw.js"></script> -->
-
-    <script type="text/javascript" src="./js/share.js"></script>
-
-</body>
+    };
+</script>
 
 </html>

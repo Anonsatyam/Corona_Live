@@ -126,28 +126,59 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
   fetch('helpline.json')
-  .then(res => {
-    res.json().then(
-      data=>{
-        // console.log(data);
-        if(data.length > 0){
-          var temp = "";
+    .then(res => {
+      res.json().then(
+        data => {
+          // console.log(data);
+          if (data.length > 0) {
+            var temp = "";
 
-          data.forEach((u)=>{
-            temp += "<tr>";
-            temp += "<td>"+u.loc+"</td>";
-            temp += "<td>"+u.number+"</td>";
-            temp += "</tr>";
+            data.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u.loc + "</td>";
+              temp += "<td>" + u.number + "</td>";
+              temp += "</tr>";
             })
             document.getElementById("helpline").innerHTML = temp;
+          }
         }
-      }
-    )
-  });
+      )
+    });
 });
+$(document).ready(function () {
+  fetch('https://api.coronastatistics.live/countries')
+    .then(res => {
+      res.json()
+        .then(
+          data => {
+            console.log(data);
+            if (data.length > 0) {
+              // u.cases.sort()
+              var world = "";
+              data.sort((a, b) => b.cases - a.cases);
 
-$(document).ready(function() {
-  $.getJSON("https://cryptic-ravine-96718.herokuapp.com/", null, function(
+              data.forEach((u) => {
+                world += "<tr>";
+                world += "<td>" + u.country + "</td>";
+                world += "<td>" + u.cases + "</td>";
+                // world += "<td>" + u.todayCases + "</td>";
+                world += "<td>" + u.recovered + "</td>";
+                world += "<td>" + u.deaths + "</td>";
+                world += "<td>" + u.active + "</td>";
+                
+                // world += "<td>" + u.todayDeaths + "</td>";
+                // world += "<td>" + u.critical + "</td>";
+                world += "</tr>";
+              })
+              document.getElementById("world_data").innerHTML = world;
+            }
+          }
+        )
+    });
+  });
+
+$(document).ready(function () {
+  $.getJSON("https://cryptic-ravine-96718.herokuapp.com/", null, function (
     data
   ) {
     var news = document.getElementById("news");
@@ -196,7 +227,7 @@ let resp2 = null;
 // $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
 //   resp = d;
 // });
-$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(data) {
+$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function (data) {
   resp = data;
   // resp2 = data.USA;
   var j = "<tbody>";
@@ -211,15 +242,15 @@ $.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(da
   document.getElementById("faster-data").innerHTML = j;
 });
 
-$(document).ready(function() {
-  $("#btn-graph").on("click", function() {
+$(document).ready(function () {
+  $("#btn-graph").on("click", function () {
     var graph = document.getElementById("graph-data");
     var map = document.getElementById("map-data");
     graph.style.display = "block";
     map.style.display = "none";
   });
 
-  $("#btn-map").on("click", function() {
+  $("#btn-map").on("click", function () {
     var graph = document.getElementById("graph-data");
     var map = document.getElementById("map-data");
     graph.style.display = "none";
@@ -227,19 +258,18 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  $("#btn-offical").on("click", function() {
+$(document).ready(function () {
+  $("#btn-offical").on("click", function () {
     var offical = document.getElementById("offical-data");
     var fast = document.getElementById("fast-data");
     offical.style.display = "block";
     fast.style.display = "none";
   });
 
-  $("#btn-fast").on("click", function() {
+  $("#btn-fast").on("click", function () {
     var offical = document.getElementById("offical-data");
     var fast = document.getElementById("fast-data");
     offical.style.display = "none";
     fast.style.display = "block";
   });
 });
-

@@ -125,7 +125,7 @@ body {
 }
 
 .nav-item:hover .nav-link {
-  color: #4a00e0 !important;
+  color: black !important;
 }
 
 .nav-item.active .nav-link {
@@ -526,6 +526,46 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .navbar {
   background: linear-gradient(to right, #8e2de2, #4a00e0);
 }
+.donate{
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5em !important;
+}
+/* .donate li{
+  line-height: 1.5em !important;
+} */
+.donate li a{
+  transition: all .2s ease-in-out;
+}
+.donate li a:hover{
+  color: white !important;
+  font-size: 22px;
+}
+.disc li{
+  list-style-type: disc !important;
+}
+.EmbeddedTweet{
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  max-width: 100% !important;
+  display: block;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 300px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
 
 
 
@@ -533,6 +573,17 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 ================================================== */
 
 @media (max-width: 767px) {
+
+  .disc li{
+    line-height: 1.8em !important;
+  }
+
+  .donate li{
+    line-height: 1.8em !important;
+  }
+  .world h2{
+    font-size: 18px !important;
+  }
   h1 {
     font-size: 38px;
   }
