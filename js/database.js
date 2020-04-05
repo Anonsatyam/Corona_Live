@@ -7,18 +7,18 @@ $.getJSON(
     j += "<tr>";
     j += "<td>" + resp.confirmed + "</td>";
     j += "<td>" + resp.active + "</td>";
-    j += "<td>" + resp.deaths + "</td>";
     j += "<td>" + resp.recovered + "</td>";
+    j += "<td>" + resp.deaths + "</td>";
     j += "</tr>";
     j += "</tbody>";
     // j += "<p>" + resp2.total + "</p>";
     document.getElementById("india_data").innerHTML = j;
 
     var mainD = document.getElementById("india_data");
-    mainD.getElementsByTagName('td')[0].style.color = "red";
-    mainD.getElementsByTagName('td')[1].style.color = "green";
-    mainD.getElementsByTagName('td')[2].style.color = "blue";
-    mainD.getElementsByTagName('td')[3].style.color = "#8A2BE2";
+    mainD.getElementsByTagName('td')[0].style.color = "#ff073a";
+    mainD.getElementsByTagName('td')[1].style.color = "#007bff";
+    mainD.getElementsByTagName('td')[2].style.color = "#28a745";
+    mainD.getElementsByTagName('td')[3].style.color = "#6c757d";
     mainD.getElementsByTagName('td').style.fontSize = "24px";
     
   }
@@ -33,18 +33,18 @@ $.getJSON(
     j += "<tr>";
     j += "<td>" + resp.total + "</td>";
     j += "<td>" + resp.active + "</td>";
-    j += "<td>" + resp.deaths + "</td>";
     j += "<td>" + resp.cured + "</td>";
+    j += "<td>" + resp.deaths + "</td>";
     j += "</tr>";
     j += "</tbody>";
     // j += "<p>" + resp2.total + "</p>";
     document.getElementById("worlds_data").innerHTML = j;
 
     var mainD = document.getElementById("worlds_data");
-    mainD.getElementsByTagName('td')[0].style.color = "red";
-    mainD.getElementsByTagName('td')[1].style.color = "green";
-    mainD.getElementsByTagName('td')[2].style.color = "blue";
-    mainD.getElementsByTagName('td')[3].style.color = "#8A2BE2";
+    mainD.getElementsByTagName('td')[0].style.color = "#ff073a";
+    mainD.getElementsByTagName('td')[1].style.color = "#007bff";
+    mainD.getElementsByTagName('td')[2].style.color = "#28a745";
+    mainD.getElementsByTagName('td')[3].style.color = "#6c757d";
     mainD.getElementsByTagName('td').style.fontSize = "24px";
   }
 );
