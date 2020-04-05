@@ -5,24 +5,25 @@ var width = window.innerWidth * (isMobile ? 0.8 : 0.5),
   height = window.innerHeight * (isMobile ? 0.6 : 0.95),
   projection = d3.geoMercator(),
   path = d3
-    .geoPath()
-    .projection(projection)
-    .pointRadius(2),
+  .geoPath()
+  .projection(projection)
+  .pointRadius(2),
   svg = d3
-    .select("#map")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height),
+  .select("#map")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height),
   g = svg.append("g"),
   tooltip = d3
-    .select("#map")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
+  .select("#map")
+  .append("div")
+  .attr("class", "tooltip")
+  .style("opacity", 0);
+
 function drawMap(t) {
   d3.json(
     "https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/map.json",
-    function(e, a) {
+    function (e, a) {
       centerZoom(a);
       var s = drawSubUnits(a);
       colorSubunits(s, t);
@@ -39,12 +40,15 @@ const populateGlobal = async () => {
 drawMap(), populateGlobal(), (casesByState = {});
 let prevVal = 0,
   apiResp = null;
+
 function prev() {
   populate(++prevVal);
 }
+
 function nxt() {
   populate(--prevVal);
 }
+
 function populate(t) {
   $("#nxtBtn").attr("disabled", 0 === t),
     $("#prevBtn").attr("disabled", t === apiResp.data.length - 1);
@@ -64,7 +68,7 @@ function populate(t) {
   let r =
     '<h2 style="color:white;">Indian States Stats</h2><table class="myTable">\n                      <thead>\n                     <tr>\n                      <th>State</td>\n                      <th>Cases</td>\n                      <th>Deaths</td>\n                      <th>Cured</td>\n                      </tr>\n                      </thead>\n                      <tbody>\n                      ';
   (casesByState = {}),
-    e.regional.forEach(t => {
+  e.regional.forEach(t => {
       const {
         confirmedCasesForeign: e,
         confirmedCasesIndian: a,
@@ -73,44 +77,51 @@ function populate(t) {
         loc: o
       } = t;
       (casesByState[o] = [a, e, n, s]),
-        (r += `<tr><td>${o.replace("Union Territory of ", "")}</td><td>${a +
+      (r += `<tr><td>${o.replace("Union Territory of ", "")}</td><td>${a +
           e}</td><td>${n}</td><td>${s}</td></tr>`);
     }),
     (r += "</tbody></table>"),
     $("#table").html(r),
-    $(".myTable").DataTable({ paging: !1, bFilter: !1, order: [[1, "desc"]] });
+    $(".myTable").DataTable({
+      paging: !1,
+      bFilter: !1,
+      order: [
+        [1, "desc"]
+      ]
+    });
   var l = d3
     .scaleLinear()
     .domain([-2, parseInt(27), 45])
-    .range(["#ddd", "#0794DB", "#050D7F"]);
+    .range(["#fff1eb", "#fdcfbb", "#bb151a"]);
   d3.json(
     "https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/map.json",
-    function(t, e) {
+    function (t, e) {
       g.selectAll(".subunit")
         .data(topojson.feature(e, e.objects.polygons).features)
         .transition()
         .duration(700)
-        .style("fill", function(t, e) {
+        .style("fill", function (t, e) {
           const a = t.properties.st_nm;
-          return a in casesByState
-            ? l(casesByState[a][0] + casesByState[a][1])
-            : "#ddd";
+          return a in casesByState ?
+            l(casesByState[a][0] + casesByState[a][1]) :
+            "#fff1eb";
         });
     }
   );
 }
+
 function centerZoom(t) {
-  var e = topojson.mesh(t, t.objects.polygons, function(t, e) {
+  var e = topojson.mesh(t, t.objects.polygons, function (t, e) {
     return t === e;
   });
   projection.scale(1).translate([0, 0]);
   var a = path.bounds(e),
     s =
-      1 /
-      Math.max(
-        (a[1][0] - a[0][0]) / width,
-        ((a[1][1] - a[0][1]) / height) * 1.1
-      ),
+    1 /
+    Math.max(
+      (a[1][0] - a[0][0]) / width,
+      ((a[1][1] - a[0][1]) / height) * 1.1
+    ),
     n = [
       (width - s * (a[1][0] + a[0][0])) / 2,
       0.5 * (height - s * (a[1][1] + a[0][1]))
@@ -118,14 +129,16 @@ function centerZoom(t) {
   projection.scale(s).translate(n);
   return e;
 }
+
 function drawOuterBoundary(t, e) {
   g.append("path")
     .datum(e)
     .attr("d", path)
     .attr("class", "subunit-boundary")
     .attr("fill", "none")
-    .attr("stroke", "#3a403d");
+    .attr("stroke", "#bb151a");
 }
+
 function drawSubUnits(t) {
   return g
     .selectAll(".subunit")
@@ -136,13 +149,13 @@ function drawSubUnits(t) {
     .attr("d", path)
     .style("stroke", "#fff")
     .style("stroke-width", "1px")
-    .on("mouseover", function(t) {
+    .on("mouseover", function (t) {
       tooltip
         .transition()
         .duration(200)
         .style("opacity", 0.9);
     })
-    .on("mousemove", function(t) {
+    .on("mousemove", function (t) {
       const e = casesByState[t.properties.st_nm];
       tooltip
         .html(
@@ -159,20 +172,21 @@ function drawSubUnits(t) {
         .style("left", d3.event.pageX + 20 + "px")
         .style("top", d3.event.pageY - 48 + "px");
     })
-    .on("mouseout", function(t) {
+    .on("mouseout", function (t) {
       tooltip
         .transition()
         .duration(400)
         .style("opacity", 0);
     });
 }
+
 function drawSubUnitLabels(t) {
   g.selectAll(".subunit-label")
     .data(topojson.feature(t, t.objects.polygons).features)
     .enter()
     .append("text")
     .attr("class", "subunit-label")
-    .attr("transform", function(t) {
+    .attr("transform", function (t) {
       return "translate(" + path.centroid(t) + ")";
     })
     .attr("dy", ".35em")
@@ -180,16 +194,16 @@ function drawSubUnitLabels(t) {
     .style("font-size", ".5em")
     .style("text-shadow", "0px 0px 2px #fff")
     .style("text-transform", "uppercase")
-    .text(function(t) {
+    .text(function (t) {
       return t.properties.st_nm;
     });
 }
-$.get("https://api.rootnet.in/covid19-in/stats/daily", function(t) {
+$.get("https://api.rootnet.in/covid19-in/stats/daily", function (t) {
   (apiResp = t), populate(prevVal);
 });
 const colorSubunits = (t, e) => {
   d3.scaleOrdinal(d3.schemeCategory20);
-  t.style("fill", function(t, e) {
-    return "#ddd";
+  t.style("fill", function (t, e) {
+    return "#fff1eb";
   });
 };

@@ -1,19 +1,103 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext'); */
 
 /* @font-face {
   font-family: GrotekMed;
-  src: url("../fonts/HKGroteskPro-Medium.woff2") format("opentype");
+  src: url(".../fonts/HKGroteskPro-Medium.woff2") format("opentype");
 } */
 
 @font-face {
-  font-family: GrotekBold;
+  font-family: archia;
   src: url("../fonts/Graphik-Bold.woff2") format("opentype");
 }
 
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-thin-webfont.eot') format("opentype");
+  src:
+    url('../fonts/archia-thin-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-thin-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-thin-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-thin-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-thin-webfont.eot') format("opentype");
+  src:
+    url('../fonts/Archia/archia-thin-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-thin-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-thin-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-thin-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-light-webfont.eot') format("opentype");
+  src:
+    url('../fonts/Archia/archia-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-light-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-light-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-light-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-regular-webfont.eot') format("opentype");
+  src:
+    url('../fonts/Archia/archia-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-regular-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-regular-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-regular-webfont.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-medium-webfont.eot') format("opentype");
+  src:
+    url('../fonts/Archia/archia-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-medium-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-medium-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-medium-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-semibold-webfont.eot') format("opentype");
+  src:
+    url('../fonts/Archia/archia-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-semibold-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-semibold-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-semibold-webfont.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Archia;
+  src: url('../fonts/Archia/archia-bold-webfont.eot') format("opentype");
+  src:
+    url('../fonts/Archia/archia-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Archia/archia-bold-webfont.woff2') format('woff2'),
+    url('../fonts/Archia/archia-bold-webfont.woff') format('woff'),
+    url('../fonts/Archia/archia-bold-webfont.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
-  background-color: #8E2DE2;
-  margin-top: 1rem;
-  font-family: GrotekMed;
+  background-color: #fff;
+
+  font-family: Archia;
   overflow-x: hidden;
 }
 
@@ -85,7 +169,7 @@ body {
   height: 17px;
   background-image: none;
   position: relative;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #343A40;
   transition: all 300ms linear;
 }
 
@@ -94,7 +178,7 @@ body {
   width: 24px;
   position: absolute;
   height: 1px;
-  background-color: white;
+  background-color: #343A40;
   top: 0;
   left: 0;
   content: '';
@@ -119,17 +203,17 @@ body {
 }
 
 .nav-link {
-  color: white !important;
+  color: #343A40 !important;
   font-weight: 500;
   transition: all 200ms linear;
 }
 
 .nav-item:hover .nav-link {
-  color: black !important;
+  color: #343A40 !important;
 }
 
 .nav-item.active .nav-link {
-  color: white !important;
+  color: #343A40 !important;
 }
 
 .nav-link {
@@ -436,7 +520,7 @@ body.hero-anime #switch {
   margin: 0;
   font-size: 13px;
   letter-spacing: 1px;
-  color: #212121;
+  color: #343A40;
   background-color: #fcfaff;
   border: none;
   border-radius: 3px;
@@ -524,28 +608,33 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 .navbar {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: #fff;
 }
-.donate{
+
+.donate {
   font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-family: archia !important;
+  
   line-height: 1.5em !important;
 }
+
 /* .donate li{
   line-height: 1.5em !important;
 } */
-.donate li a{
+.donate li a {
   transition: all .2s ease-in-out;
 }
-.donate li a:hover{
+
+.donate li a:hover {
   color: white !important;
   font-size: 22px;
 }
-.disc li{
+
+.disc li {
   list-style-type: disc !important;
 }
-.EmbeddedTweet{
+
+.EmbeddedTweet {
   justify-content: center;
   justify-self: center;
   justify-items: center;
@@ -574,16 +663,18 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media (max-width: 767px) {
 
-  .disc li{
+  .disc li {
     line-height: 1.8em !important;
   }
 
-  .donate li{
+  .donate li {
     line-height: 1.8em !important;
   }
-  .world h2{
+
+  .world h2 {
     font-size: 18px !important;
   }
+
   h1 {
     font-size: 38px;
   }
@@ -679,30 +770,32 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 h2 {
-  color: white;
+  color: #343A40;
 }
 
 .graph {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: #fff;
 }
 
 #grad {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: #fff;
   border-radius: 1rem;
   margin-top: 1rem;
-  color: white;
-  font-family: 'Nunito Sans', sans-serif;
+  color: #343A40;
+  font-family: archia !important;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
+  text-transform: uppercase;
+
 }
 
 #grad th {
-  font-size: 20px;
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px;
+  font-weight: 900 !important;
+  font-family: archia !important;
 }
 
 .map {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: #fff;
 }
 
 @keyframes shake {
@@ -749,35 +842,37 @@ div.tooltip {
 .tipps {
   display: block !important;
   min-width: 100% !important;
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: #fff;
   border-radius: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 2rem;
-  color: white;
-  font-family: GrotekMed;
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, .15);
+  color: #343A40;
+  font-family: archia;
+  box-shadow: 0 0 40px 0 #aad0e3;
 }
 
 .tipps h2 {
   font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-weight: 700;
+  font-weight: 900;
+  font-family: archia;
+  color: #343A40;
+  text-transform: uppercase;
 }
 
 th {
-  font-family: GrotekBold;
+  font-family: archia;
 }
 
 .tipps_heading {
-  font-family: 'Montserrat', sans-serif;
+  font-family: archia !important;
   text-align: center;
   font-weight: 700;
 }
 
 .tipps_p {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: archia !important;
   font-size: 18px;
   line-height: 1.9em;
   word-break: break-word;
@@ -786,7 +881,7 @@ th {
 .tipps ul li {
   list-style-type: none;
   word-break: break-word;
-  font-family: 'Nunito Sans', sans-serif !important;
+  font-family: archia !important;
 }
 
 .india-data {
@@ -796,11 +891,13 @@ th {
 
 #header {
   text-align: center;
-  color: white;
-  font-family: GrotekBold;
+  color: #343A40;
+  font-family: archia !important;
   margin-bottom: 2rem;
   margin-top: 30px;
-  font-size: 40px !important;
+  font-size: 30px !important;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 #news {
@@ -813,29 +910,30 @@ th {
 
 .text-center {
   text-align: center;
-  color: white;
+  color: #343A40;
   margin-top: 3rem;
-  font-family: GrotekBold;
+  font-family: archia;
   margin-bottom: 2rem;
 
 }
 
 .text-p {
   text-align: center;
-  color: white;
+  color: #343A40;
   margin-top: 1rem;
-  font-family: GrotekBold;
+  font-family: archia;
   margin-bottom: 2rem;
+  font-weight: 900;
 
 }
 
-.tipps_p {
+/* .tipps_p {
   font-weight: 400 !important;
-}
+} */
 
 
 .footer {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: #fff;
   padding-top: 1rem;
 }
 
@@ -879,7 +977,7 @@ th {
 
 .amaze {
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
+  font-family: archia !important;
 }
 
 .amaze a:hover {
@@ -893,8 +991,9 @@ th {
 }
 
 .credits span {
-  font-family: GrotekMed;
-  color: white;
+  font-family: archia;
+  ;
+  color: #343A40;
 }
 
 a:hover {
@@ -928,15 +1027,15 @@ a:focus {
 
 .images .col-sm-3 p {
   text-align: center;
-  color: white;
-  font-size: 18px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 700;
+  color: #343A40;
+  font-size: 16px;
+  font-family: archia;
+  font-weight: 900;
 }
 
 .images h2 {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: archia !important;
   font-family: 18px;
   font-weight: 700;
 }
@@ -955,9 +1054,8 @@ a:focus {
   flex-direction: column;
   width: 100%;
   padding: 1rem 3rem 1rem 1rem;
-  color: white;
+  color: #343A40;
   font-size: 22px !important;
-  font-weight: 400;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -983,7 +1081,7 @@ a:focus {
   float: right;
   right: 1rem;
   font-size: 1rem;
-  color: white;
+  color: #343A40;
   padding: 3px;
   width: 30px;
   height: 30px;
@@ -1014,16 +1112,15 @@ a:focus {
 }
 
 .accordion .content p {
-  color: white;
-  font-family: 'Nunito Sans', sans-serif;
+  color: #343A40;
+  font-family: archia !important;
   font-size: 18px !important;
-  font-weight: 400;
   line-height: 1.8em;
   text-align: left;
 }
 
 .accordion .content p span {
-  color: white;
+  color: #343A40;
   font-weight: 700;
   font-size: 22px;
 }
@@ -1038,10 +1135,11 @@ a:focus {
 }
 
 .faq h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: archia;
+  ;
   text-align: center;
   font-weight: 700;
-  color: white;
+  color: #343A40;
   margin: 50px 10px 0 0;
 }
 
@@ -1065,8 +1163,9 @@ a:focus {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
+  background: #343A40 !important;
   border-radius: 12px;
+  color: white;
 }
 
 /* Style the tab content */
@@ -1076,7 +1175,7 @@ a:focus {
 }
 
 .card_body {
-  background: linear-gradient(to right, #8e2de2, #4a00e0) !important;
+  background: #fff !important;
 }
 
 .stats tr:nth-child(even) {
@@ -1091,15 +1190,18 @@ a:focus {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  color: white !important;
+  color: #343A40 !important;
 }
 
 table.table td {
-  font-weight: 400 !important;
+  font-weight: 900 !important;
+  color: #6C757D;
+  font-size: 14px;
+  font-family: archia !important;
 }
 
 button {
-  color: white;
+  color: #343A40;
 }
 
 .icon {
@@ -1118,7 +1220,11 @@ button {
 .few_tips h5 {
   vertical-align: middle !important;
   align-self: center !important;
-  display: inline-block;
+  display: inline-block !important;
+}
+.link_tips h5{
+  display: inline-block !important;
+  font-family: archia;
 }
 
 .tips .row h5,
@@ -1129,9 +1235,9 @@ button {
 .link_tips button {
   width: 120px;
   height: 50px;
-  color: White;
+  color: #fff !important;
   border: none;
-  background: #4a00e0 !important;
+  background: #343A40;
   margin: 0 20px 20px 20px;
   cursor: pointer;
   font-size: 1.2em;
@@ -1140,7 +1246,7 @@ button {
 }
 
 #eight a {
-  color: white !important;
+  color: #fff!important;
 }
 
 #eight {
@@ -1151,7 +1257,7 @@ button {
 #eight::after {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: #fff;
   z-index: -1;
   transition-duration: 0.5s;
   top: 0;
@@ -1163,7 +1269,7 @@ button {
 #eight::before {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: #fff;
   z-index: -1;
   transition-duration: 0.5s;
   bottom: 0;
@@ -1175,7 +1281,7 @@ button {
 #eight_span::after {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: #fff;
   z-index: -1;
   transition-duration: 0.5s;
   transition-delay: 0.3s;
@@ -1188,7 +1294,7 @@ button {
 #eight_span::before {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: #fff;
   z-index: -1;
   transition-duration: 0.5s;
   transition-delay: 0.3s;
@@ -1215,14 +1321,17 @@ button {
 }
 
 .about p {
-  font-size: 18px !important;
+  font-size: 20px !important;
+  font-family: archia !important;
+  color: #343A40;
 }
 
 #spin {
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: GrotekMed;
+  color: rgba(32, 26, 162, 0.87);
+  font-size: 14px;
+  font-weight: 900;
+  font-family: archia !important;
+  padding: 10px 15px;
 }
 
 #spin:after {
@@ -1271,19 +1380,24 @@ button {
     content: "Stand Against FAKE News and WhatsApp Forwards! Do NOT ❌ forward a message until you verify the content it contains. ";
   }
 
-  100%{
+  100% {
     content: "Be a true Indian. Show compassion. Be considerate. Help those in need. We will get through this!";
   }
 }
+
 .Banner {
   display: flex;
   flex-direction: row;
   justify-content: center;
   line-height: 20px;
-  font-family: "Archia";
+  font-family: Archia;
   font-size: .8rem;
   font-weight: 600;
+  background: rgba(47, 40, 165, 0.13);
+  vertical-align: middle;
 }
+
+
 
 /* Mobile Code | Responsive Code*/
 @media screen and (max-width: 600px) {
@@ -1330,6 +1444,7 @@ button {
 
   .few_tips p {
     font-size: 16px !important;
+    font-weight: 400 !important;
   }
 
   .images .col-sm-3 {
@@ -1346,7 +1461,7 @@ button {
 
   .accordion .content p {
     font-size: 14px !important;
-    font-family: 'Nunito Sans', sans-serif !important;
+    font-family: archia !important;
   }
 
 
@@ -1359,7 +1474,7 @@ button {
     padding-top: 0;
     padding-bottom: 0;
     text-align: start;
-    font-size: x-small !important;
+    font-size: 12px !important;
   }
 
   .table td {
@@ -1371,7 +1486,7 @@ button {
   }
 
   table.table thead th {
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
 
 
@@ -1381,7 +1496,7 @@ button {
 
   .tipps ul li {
     font-size: 16px;
-    font-family: 'Nunito Sans', sans-serif !important;
+    font-family: archia !important;
   }
 
   .tipps h2 {
@@ -1440,7 +1555,31 @@ button {
   }
 
   .navbar.navbar-light .navbar-toggler {
-    color: white !important;
+    color: #343A40 !important;
   }
 
+}
+
+#tableData tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#tableData tr:hover {
+  background-color: #ddd;
+}
+
+#world_data tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#world_data tr:hover {
+  background-color: #ddd;
+}
+
+#helpline tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#helpline tr:hover {
+  background-color: #ddd;
 }

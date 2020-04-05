@@ -1,128 +1,172 @@
+$.getJSON(
+  "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+  null,
+  function (data) {
+    resp = data.data.total;
+    var j = "<tbody>";
+    j += "<tr>";
+    j += "<td>" + resp.confirmed + "</td>";
+    j += "<td>" + resp.active + "</td>";
+    j += "<td>" + resp.deaths + "</td>";
+    j += "<td>" + resp.recovered + "</td>";
+    j += "</tr>";
+    j += "</tbody>";
+    // j += "<p>" + resp2.total + "</p>";
+    document.getElementById("india_data").innerHTML = j;
+
+    var mainD = document.getElementById("india_data");
+    mainD.getElementsByTagName('td')[0].style.color = "red";
+    mainD.getElementsByTagName('td')[1].style.color = "green";
+    mainD.getElementsByTagName('td')[2].style.color = "blue";
+    mainD.getElementsByTagName('td')[3].style.color = "#8A2BE2";
+    mainD.getElementsByTagName('td').style.fontSize = "24px";
+    
+  }
+);
+
+$.getJSON(
+  "https://coronavirus-worlddata.herokuapp.com/total",
+  null,
+  function (data) {
+    resp = data;
+    var j = "<tbody>";
+    j += "<tr>";
+    j += "<td>" + resp.total + "</td>";
+    j += "<td>" + resp.active + "</td>";
+    j += "<td>" + resp.deaths + "</td>";
+    j += "<td>" + resp.cured + "</td>";
+    j += "</tr>";
+    j += "</tbody>";
+    // j += "<p>" + resp2.total + "</p>";
+    document.getElementById("worlds_data").innerHTML = j;
+
+    var mainD = document.getElementById("worlds_data");
+    mainD.getElementsByTagName('td')[0].style.color = "red";
+    mainD.getElementsByTagName('td')[1].style.color = "green";
+    mainD.getElementsByTagName('td')[2].style.color = "blue";
+    mainD.getElementsByTagName('td')[3].style.color = "#8A2BE2";
+    mainD.getElementsByTagName('td').style.fontSize = "24px";
+  }
+);
+
+
 $(document).ready(function () {
-  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function (
-    data
-  ) {
-    Obj = data.data.summary;
-    mainObj = data.data.regional.sort(function (a, b) {
-      return (
-        b.confirmedCasesIndian +
-        b.confirmedCasesForeign -
-        (a.confirmedCasesIndian + a.confirmedCasesForeign)
-      );
-    });
-    var k = "<tbody>";
-    for (i = 0; i < mainObj.length; i++) {
-      k += "<tr>";
-      k += "<td>" + mainObj[i].loc + "</td>";
-      k +=
-        "<td>" +
-        (mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) +
-        "</td>";
-      k += "<td>" + ((mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) - mainObj[i].deaths - mainObj[i].discharged) + "</td>";
-      k += "<td>" + mainObj[i].deaths + "</td>";
-      k += "<td>" + mainObj[i].discharged + "</td>";
-      k += "</tr>";
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function (data) {
+      Obj = data.data.statewise;
+      mainObj = data.data.statewise.sort(function (a, b) {
+        return b.confirmed - a.confirmed;
+      });
+      var loca = [];
+      var cases = [];
+      var curedcases = [];
+      var death = [];
+      for (var i = 0; i < mainObj.length - 9; i++) {
+        loca.push(mainObj[i].state);
+        cases.push(mainObj[i].confirmed);
+        curedcases.push(mainObj[i].recovered);
+        death.push(mainObj[i].deaths);
+      }
+
+      var ctx = document.getElementById("canvas").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: loca,
+          datasets: [{
+              label: "Infected",
+              data: cases,
+              backgroundColor: "yellow",
+              borderColor: "yellow",
+              fill: false
+            },
+            {
+              label: "Cured",
+              fill: false,
+              backgroundColor: "green",
+              borderColor: "green",
+              data: curedcases
+            },
+            {
+              label: "Deaths",
+              fill: false,
+              backgroundColor: "red",
+              borderColor: "red",
+              data: death
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: true,
+            labels: {
+              fontColor: "black",
+              fontSize: 16
+            }
+          },
+          responsive: true,
+          tooltips: {
+            mode: "index",
+            intersect: false
+          },
+          hover: {
+            mode: "nearest",
+            intersect: true
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              ticks: {
+                display: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "States",
+                fontColor: "black",
+                fontSize: 16
+              }
+            }],
+            yAxes: [{
+              display: true,
+              scaleLabel: {
+                display: true,
+                labelString: "No. of people",
+                fontColor: "black",
+                fontSize: 16
+              }
+            }]
+          }
+        }
+      });
     }
-    k += "</tbody> ";
-    document.getElementById("tableData").innerHTML = k;
-    var j = "<tbody>";
-    j += "<tr>";
-    j += "<td>" + Obj.total + "</td>";
-    j += "<td>" + (Obj.total - Obj.deaths - Obj.discharged) + "</td>";
-    j += "<td>" + Obj.confirmedCasesIndian + "</td>";
-    j += "</tr>";
-    j += "</tbody>";
-    document.getElementById("india-data1").innerHTML = j;
-    var j = "<tbody>";
-    j += "<tr>";
-    j += "<td>" + Obj.confirmedCasesForeign + "</td>";
-    j += "<td>" + Obj.deaths + "</td>";
-    j += "<td>" + Obj.discharged + "</td>";
-    j += "</tr>";
-    j += "</tbody>";
-    document.getElementById("india-data2").innerHTML = j;
-  });
+  );
 });
 
-$(document).ready(function () {
-  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function (
-    data
-  ) {
-    Obj = data.data.summary;
-    mainObj = data.data.regional.sort(function (a, b) {
-      return (
-        b.confirmedCasesIndian +
-        b.confirmedCasesForeign -
-        (a.confirmedCasesIndian + a.confirmedCasesForeign)
-      );
-    });
-    var loca = [];
-    var cases = [];
-    var curedcases = [];
-    for (var i = 0; i < mainObj.length - 9; i++) {
-      loca.push(mainObj[i].loc);
-      cases.push(
-        mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign
-      );
-      curedcases.push(mainObj[i].discharged);
-    }
 
-    var ctx = document.getElementById("canvas").getContext("2d");
-    var myChart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: loca,
-        datasets: [{
-            label: "Infected",
-            data: cases,
-            backgroundColor: "white",
-            borderColor: "blue",
-            fill: false
-          },
-          {
-            label: "Cured",
-            fill: false,
-            backgroundColor: "#fff",
-            borderColor: "red",
-            data: curedcases
-          }
-        ]
-      },
-      options: {
-        legend: {
-          display: true
-        },
-        responsive: true,
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
-        scales: {
-          xAxes: [{
-            display: true,
-            ticks: {
-              display: false
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "States"
-            }
-          }],
-          yAxes: [{
-            display: true,
-            scaleLabel: {
-              display: true,
-              labelString: "No. of people"
-            }
-          }]
-        }
+$(document).ready(function () {
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function (data) {
+      mainObj = data.data.statewise.sort(function (a, b) {
+        return b.confirmed - a.confirmed;
+      });
+      var k = "<tbody>";
+      for (i = 0; i < mainObj.length; i++) {
+        k += "<tr>";
+        k += "<td>" + mainObj[i].state + "</td>";
+        k += "<td>" + mainObj[i].confirmed + "</td>";
+        k += "<td>" + mainObj[i].active + "</td>";
+        k += "<td>" + mainObj[i].deaths + "</td>";
+        k += "<td>" + mainObj[i].recovered + "</td>";
+        k += "</tr>";
       }
-    });
-  });
+      k += "</tbody> ";
+      document.getElementById("tableData").innerHTML = k;
+    }
+  );
 });
 $(document).ready(function () {
   fetch('helpline.json')
@@ -165,7 +209,7 @@ $(document).ready(function () {
                 world += "<td>" + u.recovered + "</td>";
                 world += "<td>" + u.deaths + "</td>";
                 world += "<td>" + u.active + "</td>";
-                
+
                 // world += "<td>" + u.todayDeaths + "</td>";
                 // world += "<td>" + u.critical + "</td>";
                 world += "</tr>";
@@ -175,7 +219,11 @@ $(document).ready(function () {
           }
         )
     });
-  });
+});
+
+
+
+
 
 $(document).ready(function () {
   $.getJSON("https://cryptic-ravine-96718.herokuapp.com/", null, function (
@@ -200,12 +248,16 @@ $(document).ready(function () {
       card_title.setAttribute("classs", "card-title");
       card_title.style.color = "#000000"
       var news_img = document.createElement("img");
+      news_img.style.height = "250px";
+      news_img.style.width = "250px";
       news_img.setAttribute("src", data.news[i].img);
       news_img.setAttribute("class", "card-img-top");
       var btntoart = document.createElement("a");
       btntoart.setAttribute("class", "btn btn-main");
       btntoart.style.color = "#fff";
-      btntoart.style.background = "#8e2de2";
+      btntoart.style.width = "100%";
+      btntoart.style.marginTop = "10px";
+      btntoart.style.background = "#343A40";
       btntoart.setAttribute("href", data.news[i].link);
       btntoart.innerHTML = "Read More";
       var card_body = document.createElement("div");
@@ -213,6 +265,7 @@ $(document).ready(function () {
       card_body.appendChild(card_title);
       card_body.appendChild(btntoart);
       card_body.style.background = "linear-gradient(to right, #8e2de2, #4a00e0) !important";
+
       card.appendChild(news_img);
       card.appendChild(card_body);
       li.appendChild(card);
@@ -221,26 +274,8 @@ $(document).ready(function () {
   });
 });
 
-let resp = null;
-let resp2 = null;
-
-// $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
-//   resp = d;
-// });
-$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function (data) {
-  resp = data;
-  // resp2 = data.USA;
-  var j = "<tbody>";
-  j += "<tr>";
-  j += "<td>" + resp.total + "</td>";
-  j += "<td>" + resp.active + "</td>";
-  j += "<td>" + resp.deaths + "</td>";
-  j += "<td>" + resp.cured + "</td>";
-  j += "</tr>";
-  j += "</tbody>";
-  // j += "<p>" + resp2.total + "</p>";
-  document.getElementById("faster-data").innerHTML = j;
-});
+// let resp = null;
+// let resp2 = null;
 
 $(document).ready(function () {
   $("#btn-graph").on("click", function () {
