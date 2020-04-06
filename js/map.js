@@ -91,8 +91,8 @@ function populate(t) {
     });
   var l = d3
     .scaleLinear()
-    .domain([-2, parseInt(27), 45])
-    .range(["#fff1eb", "#fdcfbb", "#bb151a"]);
+    .domain([-2, parseInt(45), 400])
+    .range(["#ddd", "#0794DB", "#050D7F"]);
   d3.json(
     "https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/map.json",
     function (t, e) {
@@ -104,7 +104,7 @@ function populate(t) {
           const a = t.properties.st_nm;
           return a in casesByState ?
             l(casesByState[a][0] + casesByState[a][1]) :
-            "#fff1eb";
+            "#ddd";
         });
     }
   );
@@ -136,7 +136,7 @@ function drawOuterBoundary(t, e) {
     .attr("d", path)
     .attr("class", "subunit-boundary")
     .attr("fill", "none")
-    .attr("stroke", "#bb151a");
+    .attr("stroke", "#3a403d");
 }
 
 function drawSubUnits(t) {
@@ -171,6 +171,8 @@ function drawSubUnits(t) {
         )
         .style("left", d3.event.pageX + 20 + "px")
         .style("top", d3.event.pageY - 48 + "px");
+
+      console.log(d3.event.pageY);
     })
     .on("mouseout", function (t) {
       tooltip
@@ -204,6 +206,6 @@ $.get("https://api.rootnet.in/covid19-in/stats/daily", function (t) {
 const colorSubunits = (t, e) => {
   d3.scaleOrdinal(d3.schemeCategory20);
   t.style("fill", function (t, e) {
-    return "#fff1eb";
+    return "#ddd";
   });
 };

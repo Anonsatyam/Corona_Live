@@ -1560,8 +1560,8 @@ button {
 
 }
 
-#tableData tr:nth-child(even) {
-  background-color: #f2f2f2;
+#tableData tr {
+  background-color: #f2f2f2 !important;
 }
 
 #tableData tr:hover {
@@ -1582,4 +1582,14 @@ button {
 
 #helpline tr:hover {
   background-color: #ddd;
+}
+
+.datarow {
+  display: none;
+}
+
+.delta {
+  color: red;
+  display: inline;
+  font-size: smaller;
 }
