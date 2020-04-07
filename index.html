@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
 
@@ -34,15 +35,15 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet" />
+  <!-- <link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
   <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans&display=swap" rel="stylesheet"> -->
 
 
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="css/style.min.css">
 
 
   <!-- Material Design Bootstrap -->
@@ -52,10 +53,10 @@
 
   <!-- Your custom styles (optional) -->
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script rel="preload" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script> -->
 
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
   <title>Covid-19 Live Update | Coronavirus</title>
 
   <style>
@@ -151,7 +152,8 @@
         font-size: 14px !important;
         text-align: center;
       }
-      .J61Jbd{
+
+      .J61Jbd {
         font-size: 12px !important;
       }
     }
@@ -390,43 +392,43 @@
       </div> -->
       <div class="box">
         <div class="content">
-          <img src="./images/1.png" height="50" width="50 " alt="">
+          <img class="lazyload" data-src="./images/1.png" height="50" width="50 " alt="">
           <p>When coughing or sneezing cover your mouth and nose with flexed elbox or tissue.</p>
         </div>
       </div>
       <div class="box">
         <div class="content">
-          <img src="./images/2.png" alt="">
+          <img class="lazyload" data-src="./images/2.png" alt="">
           <p>Eat well-cooked food.</p>
         </div>
       </div>
       <div class="box">
         <div class="content">
-          <img src="./images/3.png" alt="">
+          <img class="lazyload" data-src="./images/3.png" alt="">
           <p>Avoid close contact with humans who are sick.</p>
         </div>
       </div>
       <div class="box">
         <div class="content">
-          <img src="./images/4.png" alt="">
+          <img class="lazyload" data-src="./images/4.png" alt="">
           <p>If you have fever, cough and difficulty breathing seek medical care early.</p>
         </div>
       </div>
       <div class="box">
         <div class="content">
-          <img src="./images/5.png" alt="">
+          <img class="lazyload" data-src="./images/5.png" alt="">
           <p>Avoid travelling if you have fever and cough.</p>
         </div>
       </div>
       <div class="box">
         <div class="content">
-          <img src="./images/6.png" alt="">
+          <img class="lazyload" data-src="./images/6.png" alt="">
           <p>While coughing and sneezing, wear a mask and must know how to use it and dispose it properly after use.</p>
         </div>
       </div>
       <div class="box">
         <div class="content">
-          <img src="./images/7.png" alt="">
+          <img class="lazyload" data-src="./images/7.png" alt="">
           <p>Wash your hand with soap and water atleast for 20 seconds.</p>
         </div>
       </div>
@@ -454,22 +456,22 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <img class="img-center" src="./images/cough.png" alt="Coronavirus (COVID-19) - Cough">
+                <img class="img-center lazyload" data-src="./images/cough.png" alt="Coronavirus (COVID-19) - Cough">
                 <br>
                 <p>Cough</p>
               </div>
               <div class="col-sm-3">
-                <img src="./images/breath.png" alt="Coronavirus (COVID-19) - Difficulty breathing ">
+                <img data-src="./images/breath.png" class="lazyload" alt="Coronavirus (COVID-19) - Difficulty breathing ">
                 <br>
                 <p>Difficulty breathing <br>(severe cases)</p>
               </div>
               <div class="col-sm-3">
-                <img src="./images/fever.png" alt="Coronavirus (COVID-19) - Fever">
+                <img data-src="./images/fever.png" class="lazyload" alt="Coronavirus (COVID-19) - Fever">
                 <br>
                 <p>Fever</p>
               </div>
               <div class="col-sm-3">
-                <img src="./images/fatigue.png " alt="Coronavirus (COVID-19) - Tiredness">
+                <img data-src="./images/fatigue.png " class="lazyload" alt="Coronavirus (COVID-19) - Tiredness">
                 <br>
                 <p>Tiredness</p>
               </div>
@@ -515,11 +517,11 @@
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
-  <script type="text/javascript" src="js/map.js"></script>
+  <script type="text/javascript" src="js/map.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
   <!-- Database From We Are Fetching and Showing Data On This Website -->
-  <script type="text/javascript" src="js/database.js"></script>
+  <script type="text/javascript" src="js/database.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
   <!-- Bootstrap core JavaScript -->
@@ -530,31 +532,8 @@
   <script type="text/javascript" src="./js/my_script.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
 
-  <!-- Code For Web API Share Option -->
-  <script type="text/javascript">
-    const shareBtn = document.getElementById("shareBtn")
-    shareBtn.addEventListener('click', event => {
-      if (navigator.share) {
-        navigator.share({
-            title: 'Coronavirus Live Report Of India',
-            url: 'https://indiavscovid19.com/'
-          }).then(() => {
-            console.log('Thanks for sharing!');
-          })
-          .catch(console.error);
-      } else {
-        shareDialog.classList.add('is-open');
-      }
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      $(document).on("click", ".breakrow", function () {
-        $(this).nextUntil('tr.breakrow').slideToggle(200);
-      });
 
-    });
-  </script>
+
 
   <!-- Script to track website Traffic -->
   <script src="https://www.w3counter.com/tracker.js?id=131156"></script>
@@ -562,10 +541,38 @@
 
 
   <!-- Service Worker Script -->
-  <!-- <script type="text/javascript" src="./sw.js"></script> -->
+  <script type="text/javascript" src="./sw.js"></script>
 
   <script type="text/javascript" src="./js/share.js"></script>
-  <script type="text/javascript" src="./js/chart.js"></script>
+  <script src="./js/lazysizes.min.js" async></script>
+  <!-- Images End -->
+</body>
 </body>
 
+  <!-- Code For Web API Share Option -->
+<script type="text/javascript">
+  const shareBtn = document.getElementById("shareBtn")
+  shareBtn.addEventListener('click', event => {
+    if (navigator.share) {
+      navigator.share({
+          title: 'Coronavirus Live Report Of India',
+          url: 'https://indiavscovid19.com/'
+        }).then(() => {
+          console.log('Thanks for sharing!');
+        })
+        .catch(console.error);
+    } else {
+      shareDialog.classList.add('is-open');
+    }
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $(document).on("click", ".breakrow", function () {
+      $(this).nextUntil('tr.breakrow').slideToggle(200);
+    });
+
+  });
+</script>
+<!-- Developer Name Satyam Singh -->
 </html>

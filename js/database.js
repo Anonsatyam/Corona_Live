@@ -58,232 +58,232 @@ $(document).ready(function () {
       mainD.getElementsByTagName('td').style.fontSize = "24px";
     }
   );
+});
 
+$(document).ready(function () {
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function (data) {
+      Obj = data.data.statewise;
+      mainObj = data.data.statewise.sort(function (a, b) {
+        return b.confirmed - a.confirmed;
+      });
+      var loca = [];
+      var cases = [];
+      var curedcases = [];
+      var death = [];
+      for (var i = 0; i < mainObj.length - 9; i++) {
+        loca.push(mainObj[i].state);
+        cases.push(mainObj[i].confirmed);
+        curedcases.push(mainObj[i].recovered);
+        death.push(mainObj[i].deaths);
+      }
 
-  $(document).ready(function () {
-    $.getJSON(
-      "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
-      null,
-      function (data) {
-        Obj = data.data.statewise;
-        mainObj = data.data.statewise.sort(function (a, b) {
-          return b.confirmed - a.confirmed;
-        });
-        var loca = [];
-        var cases = [];
-        var curedcases = [];
-        var death = [];
-        for (var i = 0; i < mainObj.length - 9; i++) {
-          loca.push(mainObj[i].state);
-          cases.push(mainObj[i].confirmed);
-          curedcases.push(mainObj[i].recovered);
-          death.push(mainObj[i].deaths);
-        }
-
-        var ctx = document.getElementById("canvas").getContext("2d");
-        var myChart = new Chart(ctx, {
-          type: "line",
-          data: {
-            labels: loca,
-            datasets: [{
-                label: "Infected",
-                data: cases,
-                backgroundColor: "yellow",
-                borderColor: "yellow",
-                fill: false
-              },
-              {
-                label: "Cured",
-                fill: false,
-                backgroundColor: "green",
-                borderColor: "green",
-                data: curedcases
-              },
-              {
-                label: "Deaths",
-                fill: false,
-                backgroundColor: "red",
-                borderColor: "red",
-                data: death
-              }
-            ]
+      var ctx = document.getElementById("canvas").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: loca,
+          datasets: [{
+              label: "Infected",
+              data: cases,
+              backgroundColor: "yellow",
+              borderColor: "yellow",
+              fill: false
+            },
+            {
+              label: "Cured",
+              fill: false,
+              backgroundColor: "green",
+              borderColor: "green",
+              data: curedcases
+            },
+            {
+              label: "Deaths",
+              fill: false,
+              backgroundColor: "red",
+              borderColor: "red",
+              data: death
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: true,
+            labels: {
+              fontColor: "black",
+              fontSize: 16
+            }
           },
-          options: {
-            legend: {
+          responsive: true,
+          tooltips: {
+            mode: "index",
+            intersect: false
+          },
+          hover: {
+            mode: "nearest",
+            intersect: true
+          },
+          scales: {
+            xAxes: [{
               display: true,
-              labels: {
+              ticks: {
+                display: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "States",
                 fontColor: "black",
                 fontSize: 16
               }
-            },
-            responsive: true,
-            tooltips: {
-              mode: "index",
-              intersect: false
-            },
-            hover: {
-              mode: "nearest",
-              intersect: true
-            },
-            scales: {
-              xAxes: [{
+            }],
+            yAxes: [{
+              display: true,
+              scaleLabel: {
                 display: true,
-                ticks: {
-                  display: false
-                },
-                scaleLabel: {
-                  display: true,
-                  labelString: "States",
-                  fontColor: "black",
-                  fontSize: 16
-                }
-              }],
-              yAxes: [{
-                display: true,
-                scaleLabel: {
-                  display: true,
-                  labelString: "No. of people",
-                  fontColor: "black",
-                  fontSize: 16
-                }
-              }]
-            }
-          }
-        });
-      }
-    );
-  });
-
-
-  // $(document).ready(function () {
-  //   $.getJSON(
-  //     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
-  //     null,
-  //     function (data) {
-  //       mainObj = data.data.statewise.sort(function (a, b) {
-  //         return b.confirmed - a.confirmed;
-  //       });
-  //       var k = "<tbody>";
-  //       for (i = 0; i < mainObj.length; i++) {
-  //         k += "<tr>";
-  //         k += "<td>" + mainObj[i].state + "</td>";
-  //         k += "<td>" + mainObj[i].confirmed + "</td>";
-  //         k += "<td>" + mainObj[i].active + "</td>";
-  //         k += "<td>" + mainObj[i].deaths + "</td>";
-  //         k += "<td>" + mainObj[i].recovered + "</td>";
-  //         k += "</tr>";
-  //       }
-  //       k += "</tbody> ";
-  //       document.getElementById("tableData").innerHTML = k;
-  //     }
-  //   );
-  // });
-  $(document).ready(function () {
-    fetch('helpline.json')
-      .then(res => {
-        res.json().then(
-          data => {
-            // console.log(data);
-            if (data.length > 0) {
-              var temp = "";
-
-              data.forEach((u) => {
-                temp += "<tr>";
-                temp += "<td>" + u.loc + "</td>";
-                temp += "<td>" + u.number + "</td>";
-                temp += "</tr>";
-              })
-              document.getElementById("helpline").innerHTML = temp;
-            }
-          }
-        )
-      });
-  });
-
-
-  $(document).ready(function () {
-    $.getJSON(
-      "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
-      null,
-      function (data) {
-        mainObj = data.data.statewise.sort(function (a, b) {
-          return b.confirmed - a.confirmed;
-        });
-        var k = "<tbody>";
-        for (i = 0; i < mainObj.length; i++) {
-          try {
-            state = mainObj[i].state;
-            distdata = mainObj2[state]["districtData"];
-            var dict = []; // create an empty array
-            jQuery.each(distdata, function (i, val) {
-              dict.push({
-                district: i,
-                confirmed: val.confirmed,
-                delta: val.delta.confirmed
-              });
-            });
-            dict.sort(function (a, b) {
-              return b.confirmed - a.confirmed;
-            });
-            sdelta = 0;
-            jQuery.each(dict, function (i, val) {
-              sdelta += val.delta;
-            });
-            if (sdelta == 0) {
-              sdelta = "";
-            } else {
-              sdelta += "↑";
-            }
-            k += "<tr class='breakrow'>";
-            k += "<td>" + state + "</td>";
-            k +=
-              "<td>" +
-              mainObj[i].confirmed +
-              "<p class='delta'>&nbsp;&nbsp;" +
-              sdelta +
-              "</p></td>";
-            k += "<td>" + mainObj[i].active + "</td>";
-            k += "<td>" + mainObj[i].deaths + "</td>";
-            k += "<td>" + mainObj[i].recovered + "</td>";
-
-            k += "<tr class='datarow'>";
-            k += "<th style='padding:0px 0px 0px 5px; margin:0px;'>District</th>";
-            k += "<th style='padding:0px; margin:0px;'>Cases</th>";
-            k += "</tr>";
-            k += "</tr>";
-
-
-
-            jQuery.each(dict, function (i, val) {
-              if (val.delta == 0) {
-                val.delta = "";
-              } else {
-                val.delta += "↑";
+                labelString: "No. of people",
+                fontColor: "black",
+                fontSize: 16
               }
-              k += "<tr class='datarow'>";
-              k +=
-                "<td style='padding:0px 0px 0px 5px; margin:0px;'>" +
-                val.district +
-                "</td>";
-              k +=
-                "<td style='padding:0px; margin:0px;'>" +
-                val.confirmed +
-                "<p class='delta'>&nbsp;&nbsp;" +
-                val.delta +
-                "</p></td>";
-              k += "</tr>";
-            });
-          } catch {
-            break;
+            }]
           }
         }
-        k += "</tbody> ";
-
-        document.getElementById("tableData").innerHTML = k;
-      }
-    );
-  });
+      });
+    }
+  );
 });
+
+
+// $(document).ready(function () {
+//   $.getJSON(
+//     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+//     null,
+//     function (data) {
+//       mainObj = data.data.statewise.sort(function (a, b) {
+//         return b.confirmed - a.confirmed;
+//       });
+//       var k = "<tbody>";
+//       for (i = 0; i < mainObj.length; i++) {
+//         k += "<tr>";
+//         k += "<td>" + mainObj[i].state + "</td>";
+//         k += "<td>" + mainObj[i].confirmed + "</td>";
+//         k += "<td>" + mainObj[i].active + "</td>";
+//         k += "<td>" + mainObj[i].deaths + "</td>";
+//         k += "<td>" + mainObj[i].recovered + "</td>";
+//         k += "</tr>";
+//       }
+//       k += "</tbody> ";
+//       document.getElementById("tableData").innerHTML = k;
+//     }
+//   );
+// });
+$(document).ready(function () {
+  fetch('helpline.json')
+    .then(res => {
+      res.json().then(
+        data => {
+          // console.log(data);
+          if (data.length > 0) {
+            var temp = "";
+
+            data.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u.loc + "</td>";
+              temp += "<td>" + u.number + "</td>";
+              temp += "</tr>";
+            })
+            document.getElementById("helpline").innerHTML = temp;
+          }
+        }
+      )
+    });
+});
+
+
+$(document).ready(function () {
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function (data) {
+      mainObj = data.data.statewise.sort(function (a, b) {
+        return b.confirmed - a.confirmed;
+      });
+      var k = "<tbody>";
+      for (i = 0; i < mainObj.length; i++) {
+        try {
+          state = mainObj[i].state;
+          distdata = mainObj2[state]["districtData"];
+          var dict = []; // create an empty array
+          jQuery.each(distdata, function (i, val) {
+            dict.push({
+              district: i,
+              confirmed: val.confirmed,
+              delta: val.delta.confirmed
+            });
+          });
+          dict.sort(function (a, b) {
+            return b.confirmed - a.confirmed;
+          });
+          sdelta = 0;
+          jQuery.each(dict, function (i, val) {
+            sdelta += val.delta;
+          });
+          if (sdelta == 0) {
+            sdelta = "";
+          } else {
+            sdelta += "↑";
+          }
+          k += "<tr class='breakrow'>";
+          k += "<td>" + state + "</td>";
+          k +=
+            "<td>" +
+            mainObj[i].confirmed +
+            "<p class='delta'>&nbsp;&nbsp;" +
+            sdelta +
+            "</p></td>";
+          k += "<td>" + mainObj[i].active + "</td>";
+          k += "<td>" + mainObj[i].deaths + "</td>";
+          k += "<td>" + mainObj[i].recovered + "</td>";
+
+          k += "<tr class='datarow'>";
+          k += "<th style='padding:0px 0px 0px 5px; margin:0px;'>District</th>";
+          k += "<th style='padding:0px; margin:0px;'>Cases</th>";
+          k += "</tr>";
+          k += "</tr>";
+
+
+
+          jQuery.each(dict, function (i, val) {
+            if (val.delta == 0) {
+              val.delta = "";
+            } else {
+              val.delta += "↑";
+            }
+            k += "<tr class='datarow'>";
+            k +=
+              "<td style='padding:0px 0px 0px 5px; margin:0px;'>" +
+              val.district +
+              "</td>";
+            k +=
+              "<td style='padding:0px; margin:0px;'>" +
+              val.confirmed +
+              "<p class='delta'>&nbsp;&nbsp;" +
+              val.delta +
+              "</p></td>";
+            k += "</tr>";
+          });
+        } catch {
+          break;
+        }
+      }
+      k += "</tbody> ";
+
+      document.getElementById("tableData").innerHTML = k;
+    }
+  );
+});
+
 
 $(document).ready(function () {
   fetch('https://api.coronastatistics.live/countries')
